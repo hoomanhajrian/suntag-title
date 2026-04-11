@@ -3,8 +3,6 @@ import Image from "next/image";
 
 export default function HomePage() {
   return (
-    // min-h-screen centers everything vertically and horizontally
-    // bg-background automatically handles the light/dark navy transition
     <main className="min-h-screen flex flex-col items-center justify-center p-6 bg-background">
       
       {/* Logo Container */}
@@ -30,7 +28,6 @@ export default function HomePage() {
           Coming Soon
         </h2>
 
-        {/* Body text adapting to light/dark mode */}
         <p className="font-body text-text-base text-lg md:text-xl max-w-lg mx-auto leading-relaxed pt-4">
           We are setting up our digital garage to bring you fast, reliable, and hassle-free vehicle registration, tags, and title services. 
         </p>
