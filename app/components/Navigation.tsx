@@ -53,26 +53,26 @@ const Navigation = () => {
         <header className="header">
             <nav
                 onMouseLeave={() => setMenuOpen(false)}
-                className={`fixed top-0 left-0 right-0 w-full bg-white border-b border-gray-200 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg backdrop-blur-sm bg-white/95' : ''
+                className={`fixed top-0 left-0 right-0 w-full bg-background border-b border-gold-shadow z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg backdrop-blur-sm bg-background/95' : ''
                     }`}
             >
                 <div className={`relative w-full flex flex-wrap items-center mx-auto transition-all duration-300 ${isScrolled ? 'py-1 px-3 justify-between' : 'p-4 justify-between'
                     }`}>
-                    {/* Logo - Hidden when scrolled */}
+                    {/* Logo - Compact when scrolled, full size when at top */}
                     <Link
                         href="/"
-                        className={`flex items-center w-[200px] mr-auto ml-auto md:w-auto space-x-3 rtl:space-x-reverse transition-all duration-300 ${isScrolled ? 'hidden' : 'flex'
+                        className={`flex mr-auto ml-auto md:w-auto rtl:space-x-reverse transition-all duration-300 ${isScrolled ? 'flex-col items-center space-y-0.5' : 'flex-row items-center space-x-3'
                             }`}
                     >
                         <Image
-                            src="/logo.png"
+                            src="/app-logo.png"
                             alt="sun-tag-and-title-logo"
-                            width={300}
-                            height={300}
+                            width={500}
+                            height={500}
                             priority
-                            className="h-12 w-12 object-contain"
+                            className={`object-contain transition-all duration-300 ${isScrolled ? 'h-20 w-20' : 'h-24 w-24'}`}
                         />
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap text-gray-900">
+                        <span className={`self-center font-semibold whitespace-nowrap text-text-base transition-all duration-300 ${isScrolled ? 'text-xl' : 'text-2xl hidden'}`}>
                             Sun Tag & Title
                         </span>
                     </Link>
@@ -80,7 +80,7 @@ const Navigation = () => {
                         <button
                             type="button"
                             ref={menuButtonRef}
-                            className={`inline-flex items-center justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all duration-300 ${isScrolled ? 'p-1.5 w-8 h-8' : 'p-2 w-10 h-10 lg:hidden'
+                            className={`inline-flex items-center justify-center text-sm text-text-base rounded-lg hover:bg-blue-base focus:outline-none focus:ring-2 focus:ring-gold-base transition-all duration-300 ${isScrolled ? 'p-1.5 w-8 h-8' : 'p-2 w-10 h-10 lg:hidden'
                                 }`}
                             aria-controls="navbar-sticky"
                             aria-expanded={menuOpen}
@@ -96,7 +96,7 @@ const Navigation = () => {
                     {/* Navigation Menu */}
                     <div
                         ref={menuRef}
-                        className={`absolute left-0 right-0 top-full transition-all duration-300 ease-in-out overflow-hidden bg-white border-b border-gray-200 ${isScrolled
+                        className={`absolute left-0 right-0 top-full transition-all duration-300 ease-in-out overflow-hidden bg-background border-b border-gold-shadow ${isScrolled
                                 ? (menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0')
                                 : (menuOpen ? 'max-h-96 opacity-100 lg:max-h-0 lg:opacity-0' : 'max-h-0 opacity-0 lg:max-h-full lg:opacity-100 lg:static lg:flex lg:w-full lg:order-1 lg:bg-transparent lg:border-0')
                             }`}
@@ -108,7 +108,7 @@ const Navigation = () => {
                                 <Link
                                     href="#home"
                                     onClick={() => setMenuOpen(false)}
-                                    className="block w-full py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-[#FF7A00] transition-colors duration-200"
+                                    className="block w-full py-2 px-3 text-text-base rounded-sm hover:bg-blue-base lg:hover:bg-transparent lg:hover:text-gold-base transition-colors duration-200"
                                 >
                                     Home
                                 </Link>
@@ -116,7 +116,7 @@ const Navigation = () => {
                             <li onClick={() => setMenuOpen(false)} className="transition-all duration-300 ease-in-out w-full" style={{ transitionDelay: menuOpen ? '100ms' : '0ms' }}>
                                 <Link
                                     href="#services"
-                                    className="block w-full py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-[#FF7A00] transition-colors duration-200"
+                                    className="block w-full py-2 px-3 text-text-base rounded-sm hover:bg-blue-base lg:hover:bg-transparent lg:hover:text-gold-base transition-colors duration-200"
                                 >
                                     Services
                                 </Link>
@@ -124,7 +124,7 @@ const Navigation = () => {
                             <li onClick={() => setMenuOpen(false)} className="transition-all duration-300 ease-in-out w-full" style={{ transitionDelay: menuOpen ? '150ms' : '0ms' }}>
                                 <Link
                                     href="#about"
-                                    className="block w-full py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-[#FF7A00] transition-colors duration-200"
+                                    className="block w-full py-2 px-3 text-text-base rounded-sm hover:bg-blue-base lg:hover:bg-transparent lg:hover:text-gold-base transition-colors duration-200"
                                 >
                                     About Us
                                 </Link>
@@ -132,7 +132,7 @@ const Navigation = () => {
                             <li onClick={() => setMenuOpen(false)} className="transition-all duration-300 ease-in-out w-full" style={{ transitionDelay: menuOpen ? '150ms' : '0ms' }}>
                                 <Link
                                     href="#contact"
-                                    className="block w-full py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-[#FF7A00] transition-colors duration-200"
+                                    className="block w-full py-2 px-3 text-text-base rounded-sm hover:bg-blue-base lg:hover:bg-transparent lg:hover:text-gold-base transition-colors duration-200"
                                 >
                                     Contact
                                 </Link>
