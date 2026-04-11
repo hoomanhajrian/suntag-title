@@ -2,12 +2,15 @@
 import type { Metadata } from 'next';
 import './globals.css';
 // Import the configured fonts
-import { oswald, merriweather } from './utils/fonts';
+import { dancingScript, montserrat } from './utils/fonts';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 
 export const metadata: Metadata = {
   title: 'Sun Tag And Title',
   description: 'Your Vehicle Service Partner',
 };
+
 
 export default function RootLayout({
   children,
@@ -15,12 +18,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      {/* Apply both CSS variables to the <html> tag.
-        This allows you to reference them in your CSS. 
-      */}
-      <body className={`${oswald.variable} ${merriweather.variable}`}>
+    <html lang="en" className={`${dancingScript.variable} ${montserrat.variable}`}>
+      <body>
+        <Navigation />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -2,40 +2,46 @@
 @import "tailwindcss";
 
 /* --- 1. TAILWIND V4 CONFIGURATION --- */
-/* This replaces the tailwind.config.ts file entirely */
 @theme {
-  --font-heading: var(--font-oswald), sans-serif;
-  --font-body: var(--font-merriweather), serif;
+  /* Font Variables (Mapped from layout.tsx) */
+  --font-sans: var(--font-montserrat), sans-serif;
+  --font-script: var(--font-dancing-script), cursive;
 
+  /* Custom Color Palette */
+  --color-gold-light: var(--gold-light);
+  --color-gold-base: var(--gold-base);
+  --color-gold-shadow: var(--gold-shadow);
+  
+  --color-blue-base: var(--blue-base);
+  --color-blue-glow: var(--blue-glow);
+  
+  --color-red-base: var(--red-base);
+  --color-red-shadow: var(--red-shadow);
+
+  /* Theme Core Colors */
   --color-background: var(--background);
   --color-text-base: var(--text-base);
-  --color-text-muted: var(--text-muted);
-  
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-accent: var(--accent);
 }
 
 /* --- 2. BRAND COLOR VARIABLES --- */
 @layer base {
   :root {
-    /* Light Mode */
-    --background: #FFFFFF;
-    --text-base: #0D2E55;    
-    --text-muted: #B15A10;   
-    --primary: #0D2E55;      
-    --secondary: #FF7D0C;    
-    --accent: #F5F5ED;       
-  }
+    /* Gold Palette */
+    --gold-light: #FFD700;
+    --gold-base: #FFC040;
+    --gold-shadow: #B8860B;
 
-  .dark {
-    /* Dark Mode */
-    --background: #061324;   
-    --text-base: #F5F5ED;    
-    --text-muted: #FFC600;   
-    --primary: #E6E6E6;      
-    --secondary: #FF7D0C;    
-    --accent: #111F31;       
+    /* Blue Palette */
+    --blue-base: #000080;
+    --blue-glow: #1E90FF;
+
+    /* Red Palette */
+    --red-base: #DC143C;
+    --red-shadow: #8B0000;
+
+    /* Core Baseline Mapping */
+    --background: #000000; /* Dark background matching the logo */
+    --text-base: #FDFDFD;  /* Clean white text */
   }
 }
 
@@ -44,15 +50,25 @@
   body {
     background-color: var(--background);
     color: var(--text-base);
-    font-family: var(--font-body);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
+  /* Default headings use the bold modern sans-serif */
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
+    font-family: var(--font-sans);
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.025em;
+  }
+
+  /* Specific class for when you want to use the script "Sun" font style */
+  .heading-script {
+    font-family: var(--font-script);
+    text-transform: none;
+    font-weight: 400;
+    letter-spacing: normal;
   }
 
   a {
@@ -67,10 +83,10 @@
 }
 
 /* --- 4. COMPONENT CLASSES --- */
-/* Now Tailwind knows what bg-secondary and font-heading are! */
 @layer components {
+  /* Updated to use the new Gold theme color and modern font */
   .btn-primary {
-    @apply bg-secondary text-white font-heading px-6 py-2 rounded uppercase font-bold 
-           transition-all hover:scale-105 active:scale-95 shadow-lg;
+    @apply bg-gold-base text-black font-sans px-6 py-2 rounded uppercase font-bold 
+           transition-all hover:scale-105 active:scale-95 shadow-[0_4px_14px_0_var(--gold-shadow)];
   }
 }
