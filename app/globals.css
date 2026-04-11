@@ -1,0 +1,76 @@
+/* src/app/globals.css */
+@import "tailwindcss";
+
+/* --- 1. TAILWIND V4 CONFIGURATION --- */
+/* This replaces the tailwind.config.ts file entirely */
+@theme {
+  --font-heading: var(--font-oswald), sans-serif;
+  --font-body: var(--font-merriweather), serif;
+
+  --color-background: var(--background);
+  --color-text-base: var(--text-base);
+  --color-text-muted: var(--text-muted);
+  
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+}
+
+/* --- 2. BRAND COLOR VARIABLES --- */
+@layer base {
+  :root {
+    /* Light Mode */
+    --background: #FFFFFF;
+    --text-base: #0D2E55;    
+    --text-muted: #B15A10;   
+    --primary: #0D2E55;      
+    --secondary: #FF7D0C;    
+    --accent: #F5F5ED;       
+  }
+
+  .dark {
+    /* Dark Mode */
+    --background: #061324;   
+    --text-base: #F5F5ED;    
+    --text-muted: #FFC600;   
+    --primary: #E6E6E6;      
+    --secondary: #FF7D0C;    
+    --accent: #111F31;       
+  }
+}
+
+/* --- 3. GLOBAL ELEMENT DEFAULTS --- */
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--text-base);
+    font-family: var(--font-body);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  a:hover {
+    opacity: 0.8;
+  }
+}
+
+/* --- 4. COMPONENT CLASSES --- */
+/* Now Tailwind knows what bg-secondary and font-heading are! */
+@layer components {
+  .btn-primary {
+    @apply bg-secondary text-white font-heading px-6 py-2 rounded uppercase font-bold 
+           transition-all hover:scale-105 active:scale-95 shadow-lg;
+  }
+}

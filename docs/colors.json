@@ -1,0 +1,44 @@
+{
+  "logoPalette": {
+    "primary": {
+      "deepNavy": {
+        "hex": "#0D2E55",
+        "usage": "Frame border, header text background"
+      },
+      "vibrantOrange": {
+        "hex": "#FF7D0C",
+        "usage": "Main plate background, text outline"
+      }
+    },
+    "secondary": {
+      "sunYellow": {
+        "hex": "#FFC600",
+        "usage": "Sun graphic and sky rays"
+      },
+      "metallicSilver": {
+        "hex": "#E6E6E6",
+        "usage": "'SUN' text, small car icon"
+      }
+    },
+    "accent": {
+      "offWhite": {
+        "hex": "#F5F5ED",
+        "usage": "Tag holes, small text, icons"
+      },
+      "burntOrange": {
+        "hex": "#B15A10",
+        "usage": "'U' car icon, sun shadow"
+      }
+    },
+    "text": {
+      "darkText": {
+        "hex": "#0D2E55",
+        "usage": "'SUN' text, services, title paper icon"
+      },
+      "lightText": {
+        "hex": "#FFFFFF",
+        "usage": "Header 'TAG AND TITLE' text"
+      }
+    }
+  }
+}
