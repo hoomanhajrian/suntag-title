@@ -1,43 +1,22 @@
 {
-  "logoPalette": {
-    "primary": {
-      "deepNavy": {
-        "hex": "#0D2E55",
-        "usage": "Frame border, header text background"
+  "theme": {
+    "colors": {
+      "gold": {
+        "light": "#FFD700",
+        "base": "#FFC040",
+        "shadow": "#B8860B"
       },
-      "vibrantOrange": {
-        "hex": "#FF7D0C",
-        "usage": "Main plate background, text outline"
-      }
-    },
-    "secondary": {
-      "sunYellow": {
-        "hex": "#FFC600",
-        "usage": "Sun graphic and sky rays"
+      "blue": {
+        "base": "#000080",
+        "glow": "#1E90FF"
       },
-      "metallicSilver": {
-        "hex": "#E6E6E6",
-        "usage": "'SUN' text, small car icon"
-      }
-    },
-    "accent": {
-      "offWhite": {
-        "hex": "#F5F5ED",
-        "usage": "Tag holes, small text, icons"
+      "red": {
+        "base": "#DC143C",
+        "shadow": "#8B0000"
       },
-      "burntOrange": {
-        "hex": "#B15A10",
-        "usage": "'U' car icon, sun shadow"
-      }
-    },
-    "text": {
-      "darkText": {
-        "hex": "#0D2E55",
-        "usage": "'SUN' text, services, title paper icon"
-      },
-      "lightText": {
-        "hex": "#FFFFFF",
-        "usage": "Header 'TAG AND TITLE' text"
+      "neutral": {
+        "black": "#000000",
+        "white": "#FDFDFD"
       }
     }
   }

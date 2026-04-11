@@ -1,17 +1,16 @@
-// src/app/fonts.ts (or fonts.js)
-import { Oswald, Merriweather } from 'next/font/google';
+import { Dancing_Script, Montserrat } from 'next/font/google';
 
-export const oswald = Oswald({
+// Setup for the script font ("Sun")
+export const dancingScript = Dancing_Script({ 
   subsets: ['latin'],
+  variable: '--font-dancing-script',
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-oswald', // Custom CSS variable name
 });
 
-export const merriweather = Merriweather({
+// Setup for the bold sans-serif font ("TAG AND TITLE")
+export const montserrat = Montserrat({ 
   subsets: ['latin'],
+  weight: ['400', '700', '900'], // Include bold weights for the banner text
+  variable: '--font-montserrat',
   display: 'swap',
-  weight: ['400', '700'],
-  style: ['normal', 'italic'],
-  variable: '--font-merriweather', // Custom CSS variable name
 });
