@@ -44,6 +44,8 @@ const services = [
   },
 ];
 
+const iconColors = ["text-gold-base", "text-blue-glow", "text-red-base"];
+
 const ServicesSection = () => {
   return (
     <section id="services" className="bg-background py-24 px-6">
@@ -69,13 +71,13 @@ const ServicesSection = () => {
 
         {/* Service Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <div
               key={service.title}
               className="group relative bg-background border border-gold-shadow rounded-sm p-6 flex flex-col gap-4 hover:border-gold-base transition-all duration-300 hover:shadow-lg hover:shadow-gold-shadow/20"
             >
               {/* Icon */}
-              <div className="text-gold-base group-hover:scale-110 transition-transform duration-300">
+              <div className={`${iconColors[index % 3]} group-hover:scale-110 transition-transform duration-300`}>
                 {service.icon}
               </div>
 
@@ -99,7 +101,7 @@ const ServicesSection = () => {
         <div className="text-center mt-12">
           <a
             href="#contact"
-            className="inline-block px-10 py-3 bg-gold-base text-background font-semibold uppercase tracking-wider rounded-sm hover:bg-gold-light transition-colors duration-200"
+            className="inline-block px-10 py-3 bg-blue-base text-text-base font-semibold uppercase tracking-wider rounded-sm hover:bg-blue-glow transition-colors duration-200"
           >
             Get Started Today
           </a>

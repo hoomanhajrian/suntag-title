@@ -10,9 +10,9 @@ const values = [
 ];
 
 const stats = [
-  { value: "10+", label: "Years in Business" },
-  { value: "15K+", label: "Vehicles Processed" },
-  { value: "5★", label: "Average Rating" },
+  { value: "10+", label: "Years in Business", color: "text-blue-glow", border: "hover:border-blue-glow" },
+  { value: "15K+", label: "Vehicles Processed", color: "text-red-base", border: "hover:border-red-base" },
+  { value: "5★", label: "Average Rating", color: "text-gold-base", border: "hover:border-gold-base" },
 ];
 
 const AboutSection = () => {
@@ -57,9 +57,9 @@ const AboutSection = () => {
 
             {/* Value points */}
             <ul className="space-y-3 pt-2">
-              {values.map((v) => (
+              {values.map((v, i) => (
                 <li key={v} className="flex items-start gap-3 text-text-base/80 text-sm">
-                  <svg viewBox="0 0 24 24" className="text-gold-base shrink-0 mt-0.5 w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+                  <svg viewBox="0 0 24 24" className={`${["text-gold-base","text-blue-glow","text-red-base"][i % 3]} shrink-0 mt-0.5 w-4 h-4`} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
                   <span>{v}</span>
                 </li>
               ))}
@@ -68,25 +68,15 @@ const AboutSection = () => {
 
           {/* Right — Logo + Stats */}
           <div className="flex flex-col items-center gap-10">
-            <div className="relative">
-              <div className="absolute -inset-4 rounded-full bg-gold-base opacity-5 blur-2xl" />
-              <Image
-                src="/app-logo.png"
-                alt="Sun Tag & Title"
-                width={220}
-                height={220}
-                className="object-contain relative z-10 drop-shadow-xl"
-              />
-            </div>
 
             {/* Stats row */}
             <div className="grid grid-cols-3 gap-6 w-full">
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="flex flex-col items-center text-center border border-gold-shadow rounded-sm py-5 px-3 hover:border-gold-base transition-colors duration-300"
+                  className={`flex flex-col items-center text-center border border-gold-shadow rounded-sm py-5 px-3 ${stat.border} transition-colors duration-300`}
                 >
-                  <span className="text-3xl font-bold text-gold-base">
+                  <span className={`text-3xl font-bold ${stat.color}`}>
                     {stat.value}
                   </span>
                   <span className="text-text-base/50 text-xs uppercase tracking-wider mt-1">

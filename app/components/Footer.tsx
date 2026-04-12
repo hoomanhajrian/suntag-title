@@ -10,20 +10,26 @@ const Footer = () => {
     const version = '1.2.0'; // Semantic versioning: Major.Minor.Patch
     
     return (
-        <footer className="relative z-10 bg-background py-8">
+        <footer className="relative z-10 bg-background pt-1 pb-8">
+            {/* Tri-color brand strip */}
+            <div className="flex w-full h-0.5 mb-8">
+                <div className="flex-1 bg-blue-base" />
+                <div className="flex-1 bg-red-base" />
+                <div className="flex-1 bg-gold-base" />
+            </div>
             <div className="container mx-auto px-4 text-center text-text-base">
                 <p>&copy; {new Date().getFullYear()} Sun Tag And Title. All rights reserved.</p>
                 <div className="flex justify-center space-x-6 mt-6">
-                    <a href="#" className="text-text-base hover:text-gold-base transition duration-200" aria-label="Facebook">
+                    <a href="#" className="text-text-base hover:text-blue-glow transition duration-200" aria-label="Facebook">
                         <FacebookIcon className="h-6 w-6" />
                     </a>
                     <a href="#" className="text-text-base hover:text-gold-base transition duration-200" aria-label="Twitter">
                         <TwitterIcon className="h-6 w-6" />
                     </a>
-                    <a href="#" className="text-text-base hover:text-gold-base transition duration-200" aria-label="LinkedIn">
+                    <a href="#" className="text-text-base hover:text-blue-glow transition duration-200" aria-label="LinkedIn">
                         <LinkedInIcon className="h-6 w-6" />
                     </a>
-                    <a href="#" className="text-text-base hover:text-gold-base transition duration-200" aria-label="Telegram">
+                    <a href="#" className="text-text-base hover:text-red-base transition duration-200" aria-label="Telegram">
                         <TelegramIcon className="h-6 w-6" />
                     </a>
                 </div>
@@ -43,7 +49,7 @@ const Footer = () => {
                         </div>
                     ))}
                 </div>
-                <div className="mt-6 pt-4 border-t border-gold-shadow">
+                <div className="mt-6 pt-4 border-t border-blue-base/30">
                     <p className="text-xs text-text-base/60">
                         Version {version}
                     </p>

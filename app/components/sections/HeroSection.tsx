@@ -6,9 +6,10 @@ const HeroSection = () => {
       id="home"
       className="relative min-h-screen flex flex-col items-center justify-center px-6 py-32 overflow-hidden bg-background"
     >
-      {/* Subtle background glow */}
+      {/* Subtle background glows */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-blue-base opacity-5 blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-blue-base opacity-5 blur-3xl" />
+        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-red-base opacity-5 blur-3xl" />
         <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 translate-y-1/2 w-[400px] h-[400px] rounded-full bg-gold-base opacity-5 blur-3xl" />
       </div>
 
@@ -30,13 +31,13 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-4 pt-4">
           <a
             href="#services"
-            className="px-8 py-3 bg-gold-base text-background font-semibold uppercase tracking-wider rounded-sm hover:bg-gold-light transition-colors duration-200"
+            className="px-8 py-3 bg-blue-base text-text-base font-semibold uppercase tracking-wider rounded-sm hover:bg-blue-glow transition-colors duration-200"
           >
             Our Services
           </a>
           <a
             href="#contact"
-            className="px-8 py-3 border border-gold-base text-gold-base font-semibold uppercase tracking-wider rounded-sm hover:bg-gold-base hover:text-background transition-colors duration-200"
+            className="px-8 py-3 border border-red-base text-red-base font-semibold uppercase tracking-wider rounded-sm hover:bg-red-base hover:text-text-base transition-colors duration-200"
           >
             Contact Us
           </a>
