@@ -16,7 +16,7 @@ const HeroSection = () => {
       <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto space-y-6">
 
         {/* Headline */}
-        <h1 className="text-5xl md:text-9xl font-bold text-text-base uppercase tracking-tight">
+        <h1 id="hero-title" className="text-7xl md:text-8xl font-bold text-text-base uppercase tracking-tight">
           <span className="text-gold-base block">Sun</span> <span className="text-red-base">Tag</span> &amp;{" "}
           <span className="text-blue-glow">Title</span>
         </h1>
@@ -31,13 +31,13 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-4 pt-4">
           <a
             href="#services"
-            className="px-8 py-3 bg-blue-base text-text-base font-semibold uppercase tracking-wider rounded-sm hover:bg-blue-glow transition-colors duration-200"
+            className="px-8 py-3 bg-gold-base text-background font-semibold uppercase tracking-wider rounded-sm hover:bg-gold-light transition-colors duration-200"
           >
             Our Services
           </a>
           <a
             href="#contact"
-            className="px-8 py-3 border border-red-base text-red-base font-semibold uppercase tracking-wider rounded-sm hover:bg-red-base hover:text-text-base transition-colors duration-200"
+            className="px-8 py-3 bg-red-base text-text-base font-semibold uppercase tracking-wider rounded-sm hover:bg-red-shadow transition-colors duration-200"
           >
             Contact Us
           </a>
@@ -52,11 +52,14 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-text-base/40 text-xs uppercase tracking-widest animate-bounce">
-        <span>Scroll</span>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="opacity-60">
-          <path d="M8 3v10M8 13l-4-4M8 13l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+        <span className="text-gold-base text-xs font-semibold uppercase tracking-widest">Scroll</span>
+        <div className="flex flex-col items-center gap-0.5">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="text-gold-base drop-shadow-[0_0_6px_#FFC040]">
+            <path d="M14 5v18M14 23l-7-7M14 23l7-7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </div>
       </div>
     </section>
   );

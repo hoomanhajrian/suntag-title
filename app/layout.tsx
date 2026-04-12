@@ -5,6 +5,7 @@ import './globals.css';
 import { dancingScript, montserrat } from './utils/fonts';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import BackToTop from './components/BackToTop';
 
 export const metadata: Metadata = {
   title: 'Sun Tag And Title',
@@ -23,6 +24,7 @@ export default function RootLayout({
         <Navigation />
         {children}
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );

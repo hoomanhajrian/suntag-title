@@ -17,19 +17,31 @@ const navLinkClass =
 
 const Navigation = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
+    const [titleVisible, setTitleVisible] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
     const menuButtonRef = useRef<HTMLButtonElement>(null);
 
     const handleMenuToggle = () => setMenuOpen((prev) => !prev);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-            setMenuOpen(false);
-        };
+        const handleScroll = () => setMenuOpen(false);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    // Drive entire nav layout from hero title visibility
+    useEffect(() => {
+        const heroTitle = document.getElementById('hero-title');
+        if (!heroTitle) return;
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setTitleVisible(!entry.isIntersecting);
+                if (entry.isIntersecting) setMenuOpen(false);
+            },
+            { threshold: 0 }
+        );
+        observer.observe(heroTitle);
+        return () => observer.disconnect();
     }, []);
 
     useEffect(() => {
@@ -51,14 +63,14 @@ const Navigation = () => {
     return (
         <header className="header">
             <nav
-                className={`fixed top-0 left-0 right-0 w-full bg-background z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg backdrop-blur-sm bg-background/95' : ''}`}
+                className={`fixed top-0 left-0 right-0 w-full bg-background z-50 transition-all duration-300 ${titleVisible ? 'shadow-lg backdrop-blur-sm bg-background/95' : ''}`}
             >
-                {isScrolled ? (
+                {titleVisible ? (
                     <>
                         {/* ── SCROLLED: Desktop (lg+) — split layout, no hamburger ── */}
                         <div className="hidden lg:flex items-center justify-between w-full px-8 py-2">
                             {/* Left 2 items */}
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center justify-around gap-6">
                                 {navItems.slice(0, 2).map((item) => (
                                     <Link key={item.href} href={item.href} className={navLinkClass}>
                                         {item.label}
@@ -66,7 +78,7 @@ const Navigation = () => {
                                 ))}
                             </div>
 
-                            {/* Center: Logo + Title */}
+                            {/* Center: Logo + Title (title only after hero heading leaves view) */}
                             <Link href="/" className="flex flex-col items-center gap-0.5 transition-all duration-300">
                                 <Image
                                     src="/app-logo.png"
@@ -76,13 +88,13 @@ const Navigation = () => {
                                     priority
                                     className="h-16 w-16 object-contain"
                                 />
-                                <span className="text-lg font-semibold whitespace-nowrap text-text-base leading-tight">
+                                <span className={`text-lg font-semibold whitespace-nowrap text-text-base leading-tight transition-all duration-300 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-1 pointer-events-none select-none'}`}>
                                     Sun Tag &amp; Title
                                 </span>
                             </Link>
 
                             {/* Right 2 items */}
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center justify-around gap-6">
                                 {navItems.slice(2, 4).map((item) => (
                                     <Link key={item.href} href={item.href} className={navLinkClass}>
                                         {item.label}
@@ -91,9 +103,9 @@ const Navigation = () => {
                             </div>
                         </div>
 
-                        {/* ── SCROLLED: Mobile / Tablet (< lg) — logo + hamburger ── */}
-                        <div className="flex lg:hidden items-center justify-between w-full px-4 py-2">
-                            <Link href="/" className="flex items-center gap-2">
+                        {/* ── SCROLLED: Mobile / Tablet (< lg) — logo + title centered, hamburger right ── */}
+                        <div className="relative lg:hidden flex items-center justify-center w-full px-4 py-2">
+                            <Link href="/" className="flex flex-col items-center gap-0.5">
                                 <Image
                                     src="/app-logo.png"
                                     alt="sun-tag-and-title-logo"
@@ -102,15 +114,15 @@ const Navigation = () => {
                                     priority
                                     className="h-12 w-12 object-contain"
                                 />
-                                <span className="font-semibold text-text-base whitespace-nowrap">
-                                    <span className="text-gold-base">Sun</span> <span className="text-gold-base">Tag</span> &amp; Title
+                                <span className={`font-semibold text-sm text-text-base whitespace-nowrap transition-all duration-300 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-1 pointer-events-none select-none'}`}>
+                                    <span className="text-gold-base">Sun</span>{' '}<span className="text-red-base">Tag</span>{' '}&amp;{' '}<span className="text-blue-glow">Title</span>
                                 </span>
                             </Link>
                             <button
                                 type="button"
                                 ref={menuButtonRef}
                                 onClick={handleMenuToggle}
-                                className="p-2 text-text-base rounded-lg hover:bg-blue-base focus:outline-none focus:ring-2 focus:ring-gold-base"
+                                className="absolute right-4 p-2 text-text-base rounded-lg hover:bg-blue-base focus:outline-none focus:ring-2 focus:ring-gold-base"
                                 aria-controls="navbar-mobile"
                                 aria-expanded={menuOpen}
                             >
@@ -144,9 +156,21 @@ const Navigation = () => {
                     </>
                 ) : (
                     <>
-                        {/* ── NOT SCROLLED: large centered logo ── */}
-                        <div className="relative w-full flex flex-wrap items-center mx-auto p-4 justify-between">
-                            <Link href="/" className="flex mr-auto ml-auto rtl:space-x-reverse flex-row items-center space-x-3">
+                        {/* ── NOT SCROLLED: centered logo + title column on mobile, logo only on desktop ── */}
+                        <div className="relative w-full flex items-center justify-center mx-auto p-4">
+                            {/* Mobile: logo only (title hidden here since hero title is visible) */}
+                            <Link href="/" className="flex flex-col items-center gap-1 lg:hidden">
+                                <Image
+                                    src="/app-logo.png"
+                                    alt="sun-tag-and-title-logo"
+                                    width={96}
+                                    height={96}
+                                    priority
+                                    className="h-24 w-24 object-contain"
+                                />
+                            </Link>
+                            {/* Desktop: logo only */}
+                            <Link href="/" className="hidden lg:flex flex-row items-center space-x-3">
                                 <Image
                                     src="/app-logo.png"
                                     alt="sun-tag-and-title-logo"
@@ -160,7 +184,7 @@ const Navigation = () => {
                             <button
                                 type="button"
                                 ref={menuButtonRef}
-                                className="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-text-base rounded-lg hover:bg-blue-base focus:outline-none focus:ring-2 focus:ring-gold-base lg:hidden"
+                                className="absolute right-4 inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-text-base rounded-lg hover:bg-blue-base focus:outline-none focus:ring-2 focus:ring-gold-base lg:hidden"
                                 aria-controls="navbar-sticky"
                                 aria-expanded={menuOpen}
                                 onClick={handleMenuToggle}
