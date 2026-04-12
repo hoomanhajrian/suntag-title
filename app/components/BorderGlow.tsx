@@ -71,7 +71,7 @@ function buildMeshGradients(colors: string[]): string[] {
   return gradients;
 }
 
-const BorderGlow: React.FC<BorderGlowProps> = ({
+const BorderGlow = ({
   children,
   className = '',
   edgeSensitivity = 30,
@@ -84,7 +84,7 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
   animated = false,
   colors = ['#c084fc', '#f472b6', '#38bdf8'],
   fillOpacity = 0.5,
-}) => {
+}: BorderGlowProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [cursorAngle, setCursorAngle] = useState(45);
