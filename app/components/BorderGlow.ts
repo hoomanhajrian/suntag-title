@@ -1,21 +1,6 @@
-import { useRef, useCallback, useState, useEffect, type ReactNode } from 'react';
+// This file is intentionally left as a stub. Use BorderGlow.tsx instead.
+export { default } from './BorderGlow';
 
-interface BorderGlowProps {
-  children?: ReactNode;
-  className?: string;
-  edgeSensitivity?: number;
-  glowColor?: string;
-  backgroundColor?: string;
-  borderRadius?: number;
-  glowRadius?: number;
-  glowIntensity?: number;
-  coneSpread?: number;
-  animated?: boolean;
-  colors?: string[];
-  fillOpacity?: number;
-}
-
-function parseHSL(hslStr: string): { h: number; s: number; l: number } {
   const match = hslStr.match(/([\d.]+)\s*([\d.]+)%?\s*([\d.]+)%?/);
   if (!match) return { h: 40, s: 80, l: 80 };
   return { h: parseFloat(match[1]), s: parseFloat(match[2]), l: parseFloat(match[3]) };
