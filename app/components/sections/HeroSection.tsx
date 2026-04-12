@@ -16,7 +16,7 @@ const HeroSection = () => {
       <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto space-y-6">
 
         {/* Headline */}
-        <h1 id="hero-title" className="text-7xl md:text-8xl font-bold text-text-base uppercase tracking-tight">
+        <h1 id="hero-title" className="text-5xl md:text-8xl font-bold text-text-base uppercase tracking-tight">
           <span className="text-gold-base block">Sun</span> <span className="text-red-base">Tag</span> &amp;{" "}
           <span className="text-blue-glow">Title</span>
         </h1>
