@@ -70,7 +70,7 @@ const Navigation = () => {
                         {/* ── SCROLLED: Desktop (lg+) — split layout, no hamburger ── */}
                         <div className="hidden lg:flex items-center justify-between w-full px-8 py-2">
                             {/* Left 2 items */}
-                            <div className="flex items-center justify-around gap-6">
+                            <div className="flex items-center justify-around gap-6 w-1/2">
                                 {navItems.slice(0, 2).map((item) => (
                                     <Link key={item.href} href={item.href} className={navLinkClass}>
                                         {item.label}
@@ -94,7 +94,7 @@ const Navigation = () => {
                             </Link>
 
                             {/* Right 2 items */}
-                            <div className="flex items-center justify-around gap-6">
+                            <div className="flex items-center justify-around gap-6 w-1/2">
                                 {navItems.slice(2, 4).map((item) => (
                                     <Link key={item.href} href={item.href} className={navLinkClass}>
                                         {item.label}
