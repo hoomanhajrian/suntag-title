@@ -5,32 +5,33 @@ import CloseIcon from '@mui/icons-material/Close';
 import Link from 'next/link';
 import Image from 'next/image';
 
+const navItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Services', href: '/#services' },
+    { label: 'About Us', href: '/#about' },
+    { label: 'Contact', href: '/#contact' },
+];
+
+const navLinkClass =
+    'block py-2 px-4 font-bold text-text-base hover:text-gold-base transition-colors duration-200';
+
 const Navigation = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
     const menuButtonRef = useRef<HTMLButtonElement>(null);
 
-    const handleMenuToggle = () => {
-        setMenuOpen((prev) => !prev);
-    };
+    const handleMenuToggle = () => setMenuOpen((prev) => !prev);
 
-
-    // Handle scroll for compact navigation
     useEffect(() => {
         const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            setIsScrolled(scrollPosition > 50);
-            setMenuOpen(false); // Close menu on scroll
+            setIsScrolled(window.scrollY > 50);
+            setMenuOpen(false);
         };
-
         window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Close menu when clicking outside
     useEffect(() => {
         if (!menuOpen) return;
         const handleClickOutside = (event: MouseEvent) => {
@@ -44,108 +45,182 @@ const Navigation = () => {
             }
         };
         document.addEventListener('mousedown', handleClickOutside);
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
+        return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [menuOpen]);
 
     return (
         <header className="header">
             <nav
-                onMouseLeave={() => setMenuOpen(false)}
-                className={`fixed top-0 left-0 right-0 w-full bg-background z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg backdrop-blur-sm bg-background/95' : ''
-                    }`}
+                className={`fixed top-0 left-0 right-0 w-full bg-background z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg backdrop-blur-sm bg-background/95' : ''}`}
             >
-                <div className={`relative w-full flex flex-wrap items-center mx-auto transition-all duration-300 ${isScrolled ? 'py-1 px-3 justify-between' : 'p-4 justify-between'
-                    }`}>
-                    {/* Logo - Compact when scrolled, full size when at top */}
-                    <Link
-                        href="/"
-                        className={`flex mr-auto ml-auto md:w-auto rtl:space-x-reverse transition-all duration-300 ${isScrolled ? 'flex-col items-center space-y-0.5' : 'flex-row items-center space-x-3'
-                            }`}
-                    >
-                        <Image
-                            src="/app-logo.png"
-                            alt="sun-tag-and-title-logo"
-                            width={300}
-                            height={300}
-                            priority
-                            className={`object-contain transition-all duration-300 ${isScrolled ? 'h-20 w-20' : 'h-24 w-24'}`}
-                        />
-                        <span className={`self-center font-semibold whitespace-nowrap text-text-base transition-all duration-300 ${isScrolled ? 'text-3xl mb-4' : 'text-2xl hidden'}`}>
-                            Sun Tag & Title
-                        </span>
-                    </Link>
-                        {/* Hamburger Menu Button - Show on mobile always, show on desktop/tablet when scrolled */}
-                        <button
-                            type="button"
-                            ref={menuButtonRef}
-                            className={`inline-flex items-center justify-center text-sm text-text-base rounded-lg hover:bg-blue-base focus:outline-none focus:ring-2 focus:ring-gold-base transition-all duration-300 ${isScrolled ? 'p-1.5 w-8 h-8' : 'p-2 w-10 h-10 lg:hidden'
-                                }`}
-                            aria-controls="navbar-sticky"
-                            aria-expanded={menuOpen}
-                            onClick={handleMenuToggle}
-                        >
-                            <span className="sr-only">Open main menu</span>
-                            <div className="transition-transform duration-300" style={{ transform: menuOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}>
-                                {menuOpen ? <CloseIcon /> : <MenuIcon />}
+                {isScrolled ? (
+                    <>
+                        {/* ── SCROLLED: Desktop (lg+) — split layout, no hamburger ── */}
+                        <div className="hidden lg:flex items-center justify-between w-full px-8 py-2">
+                            {/* Left 2 items */}
+                            <div className="flex items-center gap-2">
+                                {navItems.slice(0, 2).map((item) => (
+                                    <Link key={item.href} href={item.href} className={navLinkClass}>
+                                        {item.label}
+                                    </Link>
+                                ))}
                             </div>
-                        </button>
-                    </div>
 
-                    {/* Navigation Menu */}
-                    <div
-                        ref={menuRef}
-                        className={`absolute left-0 right-0 top-full transition-all duration-300 ease-in-out overflow-hidden bg-background border-b border-red-base ${isScrolled
-                                ? (menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0')
-                                : (menuOpen ? 'max-h-96 opacity-100 lg:max-h-0 lg:opacity-0' : 'max-h-0 opacity-0 lg:max-h-full lg:opacity-100 lg:static lg:flex lg:w-full lg:order-1 lg:bg-transparent lg:border-0')
-                            }`}
-                        id="navbar-sticky"
-                    >
-                        <ul className={`flex flex-col space-y-2 p-4 font-bold text-center w-full ${!isScrolled ? 'lg:p-0 lg:mt-0 lg:space-y-0 lg:flex-row lg:justify-around lg:items-center' : 'lg:p-2 lg:space-y-0 lg:flex-row lg:justify-around lg:items-center'
-                            }`}>
-                            <li className="transition-all duration-300 ease-in-out w-full" style={{ transitionDelay: menuOpen ? '50ms' : '0ms' }}>
-                                <Link
-                                    href="/"
-                                    onClick={() => setMenuOpen(false)}
-                                    className="block w-full py-2 px-3 text-gold-base text-white rounded-sm lg:bg-transparent lg:text-text-base hover:text-gold-base transition-colors duration-200"
-                                >
-                                    Home
-                                </Link>
-                            </li>
-                            <li onClick={() => setMenuOpen(false)} className="transition-all duration-300 ease-in-out w-full" style={{ transitionDelay: menuOpen ? '100ms' : '0ms' }}>
-                                <Link
-                                    href="#services"
-                                    className="block w-full py-2 px-3 text-gold-base text-white rounded-sm lg:bg-transparent lg:text-text-base hover:text-gold-base transition-colors duration-200"
-                                >
-                                    Services
-                                </Link>
-                            </li>
-                            <li onClick={() => setMenuOpen(false)} className="transition-all duration-300 ease-in-out w-full" style={{ transitionDelay: menuOpen ? '150ms' : '0ms' }}>
-                                <Link
-                                    href="#about"
-                                    className="block w-full py-2 px-3 text-gold-base text-white rounded-sm lg:bg-transparent lg:text-text-base hover:text-gold-base transition-colors duration-200"
-                                >
-                                    About Us
-                                </Link>
-                            </li>
-                            <li onClick={() => setMenuOpen(false)} className="transition-all duration-300 ease-in-out w-full" style={{ transitionDelay: menuOpen ? '150ms' : '0ms' }}>
-                                <Link
-                                    href="#contact"
-                                    className="block w-full py-2 px-3 text-gold-base text-white rounded-sm lg:bg-transparent lg:text-text-base hover:text-gold-base transition-colors duration-200"
-                                >
-                                    Contact
-                                </Link>
-                            </li>
-                             
-                        </ul>
-                    </div>
-                    {/* Tri-color brand strip */}
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 flex pointer-events-none">
-                        <div className="flex-1 bg-blue-base" />
-                        <div className="flex-1 bg-red-base" />
-                        <div className="flex-1 bg-gold-base" />
-                    </div>
+                            {/* Center: Logo + Title */}
+                            <Link href="/" className="flex flex-col items-center gap-0.5 transition-all duration-300">
+                                <Image
+                                    src="/app-logo.png"
+                                    alt="sun-tag-and-title-logo"
+                                    width={80}
+                                    height={80}
+                                    priority
+                                    className="h-16 w-16 object-contain"
+                                />
+                                <span className="text-lg font-semibold whitespace-nowrap text-text-base leading-tight">
+                                    Sun Tag &amp; Title
+                                </span>
+                            </Link>
+
+                            {/* Right 2 items */}
+                            <div className="flex items-center gap-2">
+                                {navItems.slice(2, 4).map((item) => (
+                                    <Link key={item.href} href={item.href} className={navLinkClass}>
+                                        {item.label}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* ── SCROLLED: Mobile / Tablet (< lg) — logo + hamburger ── */}
+                        <div className="flex lg:hidden items-center justify-between w-full px-4 py-2">
+                            <Link href="/" className="flex items-center gap-2">
+                                <Image
+                                    src="/app-logo.png"
+                                    alt="sun-tag-and-title-logo"
+                                    width={48}
+                                    height={48}
+                                    priority
+                                    className="h-12 w-12 object-contain"
+                                />
+                                <span className="font-semibold text-text-base whitespace-nowrap">
+                                    <span className="text-gold-base">Sun</span> <span className="text-gold-base">Tag</span> &amp; Title
+                                </span>
+                            </Link>
+                            <button
+                                type="button"
+                                ref={menuButtonRef}
+                                onClick={handleMenuToggle}
+                                className="p-2 text-text-base rounded-lg hover:bg-blue-base focus:outline-none focus:ring-2 focus:ring-gold-base"
+                                aria-controls="navbar-mobile"
+                                aria-expanded={menuOpen}
+                            >
+                                <span className="sr-only">Open main menu</span>
+                                <div style={{ transform: menuOpen ? 'rotate(90deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}>
+                                    {menuOpen ? <CloseIcon /> : <MenuIcon />}
+                                </div>
+                            </button>
+                        </div>
+
+                        {/* Mobile dropdown (scrolled) */}
+                        <div
+                            ref={menuRef}
+                            id="navbar-mobile"
+                            className={`lg:hidden absolute left-0 right-0 top-full bg-background border-b border-red-base transition-all duration-300 ease-in-out overflow-hidden ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                        >
+                            <ul className="flex flex-col p-4 font-bold text-center w-full gap-1">
+                                {navItems.map((item, i) => (
+                                    <li key={item.href} style={{ transitionDelay: menuOpen ? `${(i + 1) * 50}ms` : '0ms' }}>
+                                        <Link
+                                            href={item.href}
+                                            onClick={() => setMenuOpen(false)}
+                                            className="block w-full py-2 px-3 text-text-base rounded-sm hover:text-gold-base transition-colors duration-200"
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        {/* ── NOT SCROLLED: large centered logo ── */}
+                        <div className="relative w-full flex flex-wrap items-center mx-auto p-4 justify-between">
+                            <Link href="/" className="flex mr-auto ml-auto rtl:space-x-reverse flex-row items-center space-x-3">
+                                <Image
+                                    src="/app-logo.png"
+                                    alt="sun-tag-and-title-logo"
+                                    width={300}
+                                    height={300}
+                                    priority
+                                    className="h-24 w-24 object-contain"
+                                />
+                            </Link>
+                            {/* Hamburger — mobile/tablet only */}
+                            <button
+                                type="button"
+                                ref={menuButtonRef}
+                                className="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-text-base rounded-lg hover:bg-blue-base focus:outline-none focus:ring-2 focus:ring-gold-base lg:hidden"
+                                aria-controls="navbar-sticky"
+                                aria-expanded={menuOpen}
+                                onClick={handleMenuToggle}
+                            >
+                                <span className="sr-only">Open main menu</span>
+                                <div style={{ transform: menuOpen ? 'rotate(90deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}>
+                                    {menuOpen ? <CloseIcon /> : <MenuIcon />}
+                                </div>
+                            </button>
+                        </div>
+
+                        {/* Desktop horizontal menu (not scrolled) */}
+                        <div
+                            className="hidden lg:flex w-full border-b border-red-base bg-background"
+                            id="navbar-sticky"
+                        >
+                            <ul className="flex flex-row justify-around items-center w-full py-0">
+                                {navItems.map((item) => (
+                                    <li key={item.href}>
+                                        <Link
+                                            href={item.href}
+                                            onClick={() => setMenuOpen(false)}
+                                            className={navLinkClass}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Mobile/Tablet dropdown (not scrolled) */}
+                        <div
+                            ref={menuRef}
+                            id="navbar-sticky-mobile"
+                            className={`lg:hidden absolute left-0 right-0 top-full bg-background border-b border-red-base transition-all duration-300 ease-in-out overflow-hidden ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                        >
+                            <ul className="flex flex-col p-4 font-bold text-center w-full gap-1">
+                                {navItems.map((item, i) => (
+                                    <li key={item.href} style={{ transitionDelay: menuOpen ? `${(i + 1) * 50}ms` : '0ms' }}>
+                                        <Link
+                                            href={item.href}
+                                            onClick={() => setMenuOpen(false)}
+                                            className="block w-full py-2 px-3 text-text-base rounded-sm hover:text-gold-base transition-colors duration-200"
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </>
+                )}
+
+                {/* Tri-color brand strip */}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 flex pointer-events-none">
+                    <div className="flex-1 bg-blue-base" />
+                    <div className="flex-1 bg-red-base" />
+                    <div className="flex-1 bg-gold-base" />
+                </div>
             </nav>
         </header>
     );

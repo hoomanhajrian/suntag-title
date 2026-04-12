@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dancingScript.variable} ${montserrat.variable}`}>
+    <html lang="en" className={`${dancingScript.variable} ${montserrat.variable} scroll-smooth`}>
       <body>
         <Navigation />
         {children}

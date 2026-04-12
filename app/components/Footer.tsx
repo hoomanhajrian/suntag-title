@@ -2,9 +2,7 @@
 import { footerLinks } from '@/app/data/links';
 import Link from 'next/link';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TelegramIcon from '@mui/icons-material/Telegram';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const Footer = () => {
     const version = '1.2.0'; // Semantic versioning: Major.Minor.Patch
@@ -23,14 +21,8 @@ const Footer = () => {
                     <a href="#" className="text-text-base hover:text-blue-glow transition duration-200" aria-label="Facebook">
                         <FacebookIcon className="h-6 w-6" />
                     </a>
-                    <a href="#" className="text-text-base hover:text-gold-base transition duration-200" aria-label="Twitter">
-                        <TwitterIcon className="h-6 w-6" />
-                    </a>
-                    <a href="#" className="text-text-base hover:text-blue-glow transition duration-200" aria-label="LinkedIn">
-                        <LinkedInIcon className="h-6 w-6" />
-                    </a>
-                    <a href="#" className="text-text-base hover:text-red-base transition duration-200" aria-label="Telegram">
-                        <TelegramIcon className="h-6 w-6" />
+                    <a href="https://wa.me/+14433557141" className="text-text-base hover:text-green-500 transition duration-200" aria-label="WhatsApp">
+                        <WhatsAppIcon className="h-6 w-6" />
                     </a>
                 </div>
                 <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6 mt-4 text-sm">

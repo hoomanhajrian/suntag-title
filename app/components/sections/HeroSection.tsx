@@ -16,9 +16,9 @@ const HeroSection = () => {
       <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto space-y-6">
 
         {/* Headline */}
-        <h1 className="text-5xl md:text-7xl font-bold text-text-base uppercase tracking-tight">
-          Sun Tag &amp;{" "}
-          <span className="text-gold-base">Title</span>
+        <h1 className="text-5xl md:text-9xl font-bold text-text-base uppercase tracking-tight">
+          <span className="text-gold-base block">Sun</span> <span className="text-red-base">Tag</span> &amp;{" "}
+          <span className="text-blue-glow">Title</span>
         </h1>
 
         {/* Sub-headline */}

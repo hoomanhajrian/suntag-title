@@ -29,14 +29,14 @@ const contactInfo = [
     icon: <AccessTimeIcon fontSize="medium" />,
     iconColor: "text-gold-base",
     label: "Hours",
-    value: "Mon – Fri: 8am – 6pm · Sat: 9am – 3pm",
+    value: "Everyday : 9am – 7:30pm (EST)",
     href: null,
   },
 ];
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="bg-background py-24 px-6">
+    <section id="contact" className="bg-background py-24 px-6 scroll-mt-36">
       <div className="max-w-4xl mx-auto">
 
         {/* Header */}

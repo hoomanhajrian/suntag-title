@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const values = [
   "Licensed and state-authorized tag agency",
-  "Serving our community for over 10 years",
+  "Serving our community for over 5 years",
   "Same-day processing on most services",
   "Friendly, knowledgeable staff",
   "Transparent pricing — no hidden fees",
@@ -10,14 +10,14 @@ const values = [
 ];
 
 const stats = [
-  { value: "10+", label: "Years in Business", color: "text-blue-glow", border: "hover:border-blue-glow" },
-  { value: "15K+", label: "Vehicles Processed", color: "text-red-base", border: "hover:border-red-base" },
+  { value: "5+", label: "Years in Business", color: "text-blue-glow", border: "hover:border-blue-glow" },
+  { value: "7K+", label: "Vehicles Processed", color: "text-red-base", border: "hover:border-red-base" },
   { value: "5★", label: "Average Rating", color: "text-gold-base", border: "hover:border-gold-base" },
 ];
 
 const AboutSection = () => {
   return (
-    <section id="about" className="bg-background py-24 px-6">
+    <section id="about" className="bg-background py-24 px-6 scroll-mt-36">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 space-y-3">
