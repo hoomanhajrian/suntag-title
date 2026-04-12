@@ -89,7 +89,7 @@ const Navigation = () => {
                                     className="h-16 w-16 object-contain"
                                 />
                                 <span className={`text-lg font-semibold whitespace-nowrap text-text-base leading-tight transition-all duration-300 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-1 pointer-events-none select-none'}`}>
-                                    Sun Tag &amp; Title
+                                    <span className="text-gold-base">Sun</span>{' '}<span className="text-red-base">Tag</span>{' '}&amp;{' '}<span className="text-blue-glow">Title</span>
                                 </span>
                             </Link>
 
