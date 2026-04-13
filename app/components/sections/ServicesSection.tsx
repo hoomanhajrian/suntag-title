@@ -2,8 +2,6 @@ import React from "react";
 import Image from "next/image";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import ArticleIcon from "@mui/icons-material/Article";
-import SupportAgentIcon from "@mui/icons-material/SupportAgent";
-import LaptopIcon from "@mui/icons-material/Laptop";
 import GavelIcon from "@mui/icons-material/Gavel";
 import BorderGlow from "../BorderGlow";
 
@@ -22,23 +20,6 @@ const coreServices = [
       "30-day temporary tags, duplicate titles, and out-of-state vehicle registrations handled with care.",
     image: "/services/specialty-paperwork.jpg",
   },
-  {
-    icon: <SupportAgentIcon className="w-8 h-8" />,
-    title: "Consultation",
-    description:
-      "Expert assistance with MVA flags, jurisdictional citations, and complex registration issues.",
-    image: "/services/consultation.jpg",
-  },
-  {
-    icon: <LaptopIcon className="w-8 h-8" />,
-    title: "Digital Tools",
-    description:
-      "Online MVA fee estimators and a 50-state requirement finder to simplify your planning.",
-    image: "/services/digital-tools.jpg",
-  },
-];
-
-const additionalServices = [
   {
     icon: <GavelIcon className="w-8 h-8" />,
     title: "Notary",
@@ -140,18 +121,6 @@ const ServicesSection = () => {
           <div className="flex flex-col gap-8">
             {coreServices.map((service, index) => (
               <ServiceRow key={service.title} service={service} colorIndex={index} reverse={index % 2 !== 0} />
-            ))}
-          </div>
-        </div>
-
-        {/* Additional Administrative Services — zig-zag */}
-        <div className="mt-12">
-          <h3 className="text-gold-base text-xs font-semibold uppercase tracking-widest mb-8">
-            Additional Administrative Services
-          </h3>
-          <div className="flex flex-col gap-8">
-            {additionalServices.map((service, index) => (
-              <ServiceRow key={service.title} service={service} colorIndex={index + 1} reverse={false} />
             ))}
           </div>
         </div>

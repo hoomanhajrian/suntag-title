@@ -21,6 +21,23 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dancingScript.variable} ${montserrat.variable} scroll-smooth`}>
       <body>
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'fixed',
+            top: 0,
+            right: 0,
+            width: '35%',
+            height: '100%',
+            backgroundImage: "url('/track-bg.jpg')",
+            backgroundRepeat: 'repeat-y',
+            backgroundSize: '100% auto',
+            backgroundPosition: 'top right',
+            opacity: 0.2,
+            zIndex: 0,
+            pointerEvents: 'none',
+          }}
+        />
         <Navigation />
         {children}
         <Footer />
