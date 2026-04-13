@@ -6,7 +6,37 @@ const HeroSection = () => {
       id="home"
       className="relative min-h-screen flex flex-col items-center justify-center px-6 py-32 overflow-hidden bg-background"
     >
-      {/* Subtle background glows */}
+      {/* ── Hero background image ── */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <Image
+          src="/assets/hero-bg.jpeg"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          style={{
+            filter: 'brightness(0.45) contrast(1.15) saturate(0.65) sepia(0.12)',
+          }}
+        />
+        {/* Vignette: edges fade to pure black */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse at 50% 40%, transparent 35%, rgba(0,0,0,0.45) 85%, rgba(0,0,0,0.7) 100%)',
+          }}
+        />
+        {/* Brand-blue gradient wash along the bottom third */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 40%, rgba(0,0,64,0.2) 100%)',
+          }}
+        />
+      </div>
+
+      {/* Subtle colored ambient glows (sit above the image) */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-blue-base opacity-5 blur-3xl" />
         <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-red-base opacity-5 blur-3xl" />
@@ -24,7 +54,7 @@ const HeroSection = () => {
         {/* Sub-headline */}
         <p className="text-text-base/70 text-lg md:text-xl max-w-2xl leading-relaxed">
           Fast, reliable, and hassle-free vehicle registration, tags, and title
-          services — all in one place.
+          services in <span className="text-gold-base font-semibold">Columbia, Maryland</span> — all in one place.
         </p>
 
         {/* CTA Buttons */}

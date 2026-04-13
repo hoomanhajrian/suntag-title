@@ -11,21 +11,24 @@ const coreServices = [
     title: "On-Site Processing",
     description:
       "Same-day Maryland license plates, registration renewals, and title transfers — handled in one visit.",
-    image: "/services/on-site-processing.jpg",
+    image: "/assets/on-site-processing.jpg",
+    imageFilter: undefined,
   },
   {
     icon: <ArticleIcon className="w-8 h-8" />,
     title: "Specialty Paperwork",
     description:
       "30-day temporary tags, duplicate titles, and out-of-state vehicle registrations handled with care.",
-    image: "/services/specialty-paperwork.jpg",
+    image: "/assets/specialty-paperwork.jpg",
+    imageFilter: undefined,
   },
   {
     icon: <GavelIcon className="w-8 h-8" />,
     title: "Notary",
     description:
       "In-person public notary services available on-site. No legal advice provided.",
-    image: "/services/notary.jpg",
+    image: "/assets/notary-service.jpg",
+    imageFilter: undefined,
   },
 ];
 
@@ -37,24 +40,36 @@ const cardColorSets = [
   { colors: ['#DC143C', '#1E90FF', '#FFC040'], glowColor: '348 83 58' },
 ];
 
-type Service = { icon: React.ReactNode; title: string; description: string; image: string };
+type Service = { icon: React.ReactNode; title: string; description: string; image: string; imageFilter?: string };
 
 const ServiceRow = ({ service, colorIndex, reverse }: { service: Service; colorIndex: number; reverse: boolean }) => {
   const { colors, glowColor } = cardColorSets[colorIndex % 3];
+  const overlayColor = colors[0];
   return (
     <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-6 items-stretch`}>
       {/* Photo */}
-      <div className="relative w-full lg:w-1/2 min-h-56 rounded-md overflow-hidden bg-background/50 border border-white/5">
+      <div className="group/photo relative w-full lg:w-1/2 min-h-56 rounded-md overflow-hidden bg-background/50 border border-white/5">
         <Image
           src={service.image}
           alt={service.title}
           fill
-          className="object-cover opacity-80"
+          className="object-cover transition-transform duration-700 ease-out group-hover/photo:scale-[1.06]"
           sizes="(max-width: 1024px) 100vw, 50vw"
+          style={service.imageFilter ? { filter: service.imageFilter } : undefined}
         />
-        {/* Fallback tinted overlay with icon when image missing */}
-        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-background/80 to-background/40">
-          <span className={`${iconColors[colorIndex % 3]} opacity-20`} style={{ fontSize: '6rem' }}>
+        {/* Color gradient overlay at bottom */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-1/3 pointer-events-none"
+          style={{ background: `linear-gradient(to top, ${overlayColor}55, transparent)` }}
+        />
+        {/* Shine sweep on hover */}
+        <div className="absolute inset-0 -translate-x-full group-hover/photo:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none" />
+        {/* Subtle icon watermark */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <span
+            className={`${iconColors[colorIndex % 3]} opacity-10 group-hover/photo:opacity-25 transition-opacity duration-500`}
+            style={{ fontSize: '6rem' }}
+          >
             {service.icon}
           </span>
         </div>

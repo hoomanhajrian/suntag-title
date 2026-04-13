@@ -2,6 +2,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 const contactInfo = [
   {
@@ -96,8 +97,22 @@ const ContactSection = () => {
           ))}
         </div>
 
+        {/* WhatsApp CTA */}
+        <div className="relative z-10 flex justify-center mb-10">
+          <a
+            href="https://wa.me/14433557141"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-sm font-bold text-white text-base uppercase tracking-widest transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
+            style={{ backgroundColor: '#25D366' }}
+          >
+            <WhatsAppIcon fontSize="medium" />
+            Chat with us
+          </a>
+        </div>
+
         {/* Map */}
-        <div className="rounded-sm overflow-hidden border border-blue-base/40 hover:border-blue-base transition-colors duration-300">
+        <div className="relative z-10 bg-background rounded-sm overflow-hidden border border-blue-base/40 hover:border-blue-base transition-colors duration-300">
           <iframe
             title="Sun Tag & Title Location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3098.2386396738!2d-76.84538492346463!3d39.18185657169395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7e0e9ef7f2345%3A0x1!2s10400+Shaker+Dr%2C+Columbia%2C+MD+21046!5e0!3m2!1sen!2sus!4v1"

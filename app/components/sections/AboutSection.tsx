@@ -43,7 +43,8 @@ const AboutSection = () => {
               <span className="text-gold-base">Tag Agency</span>
             </h3>
             <p className="text-text-base/70 leading-relaxed">
-              Sun Tag &amp; Title is a licensed Florida tag agency dedicated to
+              Sun Tag &amp; Title is a licensed Maryland tag agency located in{" "}
+              <span className="text-gold-base font-semibold">Columbia, Maryland</span>, dedicated to
               making vehicle services fast and stress-free. We take the hassle
               out of DMV visits by offering the same state-authorized services
               right in your neighborhood.
