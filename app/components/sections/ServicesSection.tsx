@@ -11,7 +11,14 @@ const coreServices = [
     title: "On-Site Processing",
     description:
       "Same-day Maryland license plates, registration renewals, and title transfers — handled in one visit.",
-    image: "/assets/on-site-processing.jpg",
+    details: [
+      "New & replacement Maryland license plates",
+      "Vehicle registration renewals",
+      "Title transfers between private parties or dealers",
+      "Same-day processing — no waiting weeks by mail",
+      "Friendly staff to guide you through every step",
+    ],
+    image: "/assets/on-site-processing-service.jpg",
     imageFilter: undefined,
   },
   {
@@ -19,7 +26,14 @@ const coreServices = [
     title: "Specialty Paperwork",
     description:
       "30-day temporary tags, duplicate titles, and out-of-state vehicle registrations handled with care.",
-    image: "/assets/specialty-paperwork.jpg",
+    details: [
+      "30-day temporary paper tags",
+      "Duplicate/replacement title applications",
+      "Out-of-state vehicle title conversions",
+      "Lien releases and lien additions",
+      "Name changes on existing titles",
+    ],
+    image: "/assets/specialty-paperwork-service.jpg",
     imageFilter: undefined,
   },
   {
@@ -27,6 +41,13 @@ const coreServices = [
     title: "Notary",
     description:
       "In-person public notary services available on-site. No legal advice provided.",
+    details: [
+      "Notarization of vehicle title signatures",
+      "Bill of sale and odometer disclosure notarization",
+      "General document notarization",
+      "Walk-ins welcome — no appointment needed",
+      "Quick turnaround, usually under 10 minutes",
+    ],
     image: "/assets/notary-service.jpg",
     imageFilter: undefined,
   },
@@ -40,7 +61,7 @@ const cardColorSets = [
   { colors: ['#DC143C', '#1E90FF', '#FFC040'], glowColor: '348 83 58' },
 ];
 
-type Service = { icon: React.ReactNode; title: string; description: string; image: string; imageFilter?: string };
+type Service = { icon: React.ReactNode; title: string; description: string; details: string[]; image: string; imageFilter?: string };
 
 const ServiceRow = ({ service, colorIndex, reverse }: { service: Service; colorIndex: number; reverse: boolean }) => {
   const { colors, glowColor } = cardColorSets[colorIndex % 3];
@@ -48,12 +69,12 @@ const ServiceRow = ({ service, colorIndex, reverse }: { service: Service; colorI
   return (
     <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-6 items-stretch`}>
       {/* Photo */}
-      <div className="group/photo relative w-full lg:w-1/2 min-h-56 rounded-md overflow-hidden bg-background/50 border border-white/5">
+      <div className="group/photo relative w-full lg:w-1/2 h-64 lg:h-auto lg:min-h-72 rounded-md overflow-hidden isolate bg-background/50 border border-white/5">
         <Image
           src={service.image}
           alt={service.title}
           fill
-          className="object-cover transition-transform duration-700 ease-out group-hover/photo:scale-[1.06]"
+          className="object-fill object-center transition-transform duration-700 ease-out group-hover/photo:scale-[1.06] will-change-transform"
           sizes="(max-width: 1024px) 100vw, 50vw"
           style={service.imageFilter ? { filter: service.imageFilter } : undefined}
         />
@@ -98,6 +119,14 @@ const ServiceRow = ({ service, colorIndex, reverse }: { service: Service; colorI
             <p className="text-text-base/60 text-sm leading-relaxed">
               {service.description}
             </p>
+            <ul className="mt-1 flex flex-col gap-1.5">
+              {service.details.map((detail) => (
+                <li key={detail} className="flex items-start gap-2 text-sm text-text-base/50">
+                  <span className={`${iconColors[colorIndex % 3]} mt-0.5 shrink-0`}>&#8227;</span>
+                  {detail}
+                </li>
+              ))}
+            </ul>
           </div>
         </BorderGlow>
       </div>
