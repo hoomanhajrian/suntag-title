@@ -23,19 +23,19 @@ const faqGroups: FAQGroup[] = [
     border: "border-gold-base",
     items: [
       {
-        question: "What do I need to transfer a vehicle title in Florida?",
+        question: "What do I need to transfer a vehicle title in Maryland?",
         answer:
-          "You will need the signed Florida title (seller must sign the back), a completed Form HSMV 82040, valid government-issued photo ID, proof of current Florida auto insurance, and payment for state fees plus our service fee. Both buyer and seller signatures are required on the title.",
+          "You will need the signed Maryland Certificate of Title (seller must sign the back), a completed MVA title application, valid government-issued photo ID, proof of current Maryland auto insurance, and payment for state fees plus our service fee. Both buyer and seller signatures are required on the title.",
       },
       {
         question: "How long does a title transfer take?",
         answer:
-          "Most title transfers are processed same day at our office. Once submitted to the DHSMV, the new title is typically mailed within 7–10 business days. You leave with your new registration and plate the same day.",
+          "Most title transfers are processed same day at our office. Once submitted to the MVA (Maryland Vehicle Administration), the new title is typically mailed within 7–10 business days. You leave with your new registration and plate the same day.",
       },
       {
         question: "Can I transfer a title if there is a lien on the vehicle?",
         answer:
-          "If the seller still has an outstanding loan, the lienholder must either release the title electronically or mail the original title directly to the DHSMV. We can walk you through the steps and confirm lien status before you come in.",
+          "If the seller still has an outstanding loan, the lienholder must either release the title electronically or mail the original title directly to the MVA. We can walk you through the steps and confirm lien status before you come in.",
       },
       {
         question: "What if the name on the title does not match the seller's ID?",
@@ -50,24 +50,24 @@ const faqGroups: FAQGroup[] = [
     border: "border-blue-glow",
     items: [
       {
-        question: "When does my Florida vehicle registration expire?",
+        question: "When does my Maryland vehicle registration expire?",
         answer:
-          "Florida registrations expire on the registered owner's birthday each year. You can renew up to 90 days before the expiration date. Renewals processed after the birthday incur a $10 late fee.",
+          "Maryland registrations expire on the registered owner's birthday each year. You can renew up to 60 days before the expiration date. Renewals processed after the expiration date incur late fees — come in early to avoid them.",
       },
       {
         question: "What do I need to renew my registration?",
         answer:
-          "Bring your renewal notice (or just your plate number), a valid photo ID, and proof of current Florida insurance (minimum $10,000 PIP and $10,000 PDL). We process renewals same day and hand you the new decal before you leave.",
+          "Bring your renewal notice (or your plate number), a valid photo ID, and proof of current Maryland auto insurance. Maryland requires liability coverage and uninsured motorist coverage. We process renewals same day and hand you the new sticker before you leave.",
       },
       {
         question: "Can I do a multi-year registration renewal?",
         answer:
-          "Yes — Florida allows 2-year registration renewals. This saves you a trip next year and locks in today's state fee rates. Ask us about it when you come in.",
+          "Yes — Maryland allows 2-year registration renewals. This saves you a trip next year and locks in today's state fee rates. Ask us about it when you come in.",
       },
       {
-        question: "I moved to Florida. When do I need to register my vehicle?",
+        question: "I moved to Maryland. When do I need to register my vehicle?",
         answer:
-          "New Florida residents must register their out-of-state vehicle within 30 days of establishing residency. You will need your out-of-state title (or electronic lien info), a Florida driver's license or ID, proof of Florida insurance, and a VIN verification. We will tell you exactly where to get the VIN check if needed.",
+          "New Maryland residents must title and register their out-of-state vehicle within 60 days of establishing residency. You will need your out-of-state title (or lienholder payoff info), a valid Maryland driver's license or ID, proof of Maryland auto insurance, and a safety inspection certificate. We will guide you through each step.",
       },
     ],
   },
@@ -79,17 +79,17 @@ const faqGroups: FAQGroup[] = [
       {
         question: "How do I get a 30-day temporary tag?",
         answer:
-          "Bring your bill of sale or signed title, valid photo ID, and proof of Florida insurance. We issue the temp tag the same day. It is valid for 30 days and allows you to drive the vehicle legally while your permanent registration is being processed.",
+          "Bring your bill of sale or signed title, valid photo ID, and proof of Maryland auto insurance. We issue the temp tag the same day. It is valid for 30 days and allows you to drive the vehicle legally while your permanent registration is being processed.",
       },
       {
         question: "Can I get a second temporary tag if 30 days is not enough?",
         answer:
-          "Florida law generally does not allow a second temporary tag to be issued for the same vehicle. If your situation requires additional time, come in so we can assess the reason for the delay and explore options.",
+          "Maryland law generally does not allow a second temporary tag to be issued for the same vehicle. If your situation requires additional time, come in so we can assess the reason for the delay and explore your options.",
       },
       {
         question: "Do I need insurance before getting a temp tag?",
         answer:
-          "Yes. Florida requires valid auto insurance before any tag or registration can be issued. Bring proof of a current Florida policy that meets the state minimums ($10,000 PIP and $10,000 PDL).",
+          "Yes. Maryland requires valid auto insurance before any tag or registration can be issued. Bring proof of a current Maryland policy that meets the state minimums for liability and uninsured motorist coverage.",
       },
     ],
   },
@@ -101,12 +101,12 @@ const faqGroups: FAQGroup[] = [
       {
         question: "How do I get a duplicate title if I lost mine?",
         answer:
-          "You will need Form HSMV 82101, a valid photo ID, and payment for the state fee. If there is an active lien on the vehicle, the lienholder must also authorize the duplicate. We help you check lien status and complete the paperwork — most duplicates are ready the same day.",
+          "You will need a completed MVA Application for Duplicate Certificate of Title, a valid photo ID, and payment for the state fee. If there is an active lien on the vehicle, the lienholder must also authorize the duplicate. We help you check lien status and complete the paperwork — most duplicates are processed the same day.",
       },
       {
         question: "What is an e-title, and how do I get a printed copy?",
         answer:
-          "An electronic title (e-title) means your title is held electronically by the Florida DHSMV rather than mailed to you. If you need a printed title — for example, to complete a private sale — we can print it on the spot for a small fee.",
+          "An electronic title (e-title) means your title is held electronically by the Maryland MVA rather than mailed to you. If you need a printed title — for example, to complete a private sale — we can assist you with obtaining a printed copy for a small state fee.",
       },
     ],
   },
@@ -118,7 +118,7 @@ const faqGroups: FAQGroup[] = [
       {
         question: "How much does it cost to use your services?",
         answer:
-          "Our service fee covers the administrative work we do on your behalf. State and DHSMV fees are separate and set by the state — they vary by vehicle type, weight, and county. We always disclose the full cost before processing anything.",
+          "Our service fee covers the administrative work we do on your behalf. State MVA fees are separate and set by Maryland — they vary by vehicle type, weight, and county. We always disclose the full cost before processing anything.",
       },
       {
         question: "What payment methods do you accept?",
@@ -128,7 +128,7 @@ const faqGroups: FAQGroup[] = [
       {
         question: "Are state fees refundable if my application is rejected?",
         answer:
-          "Government fees are generally non-refundable once submitted to the DHSMV. Our service fee is also non-refundable once we have begun processing — including document review and data entry. If an error is on our end, we will re-process at no additional service fee.",
+          "Government fees are generally non-refundable once submitted to the MVA. Our service fee is also non-refundable once we have begun processing — including document review and data entry. If an error is on our end, we will re-process at no additional service fee.",
       },
     ],
   },
@@ -145,17 +145,17 @@ const faqGroups: FAQGroup[] = [
       {
         question: "Are you a government agency?",
         answer:
-          "No. Sun Tag & Title is a privately owned, DHSMV-authorized Florida tag agency. We are not the Department of Highway Safety and Motor Vehicles. We perform many of the same transactions as a DHSMV service center, but we are an independent business.",
+          "No. Sun Tag & Title is a privately owned, MVA-authorized Maryland tag agency located in Columbia, MD. We are not the Maryland Motor Vehicle Administration. We perform many of the same transactions as an MVA service center, but we are an independent business.",
       },
       {
         question: "Can you help if my registration has a flag or hold?",
         answer:
-          "Yes — we can look up your DHSMV record and explain why your registration is flagged. Common reasons include outstanding citations, unpaid fees, insurance lapses, or an unresolved lien. We will tell you exactly what needs to be resolved and assist where we can.",
+          "Yes — we can look up your MVA record and explain why your registration is flagged. Common reasons include outstanding citations, unpaid fees, insurance lapses, or an unresolved lien. We will tell you exactly what needs to be resolved and assist where we can.",
       },
       {
         question: "Do you offer notary services?",
         answer:
-          "Yes, we have a public notary on-site. Please note that notary services do not constitute legal advice. For legal matters, consult a licensed Florida attorney.",
+          "Yes, we have a public notary on-site. Please note that notary services do not constitute legal advice. For legal matters, consult a licensed Maryland attorney.",
       },
     ],
   },

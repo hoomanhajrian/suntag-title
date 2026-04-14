@@ -1,8 +1,12 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Terms of Service | Sun Tag And Title",
-  description: "Terms of Service for Sun Tag And Title.",
+  title: "Terms of Service | Sun Tag & Title – Columbia, MD",
+  description:
+    "Read the Terms of Service for Sun Tag & Title, a licensed Maryland tag agency in Columbia, MD.",
+  alternates: {
+    canonical: 'https://suntagandtitle.com/terms',
+  },
 };
 
 const sections = [

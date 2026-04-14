@@ -8,8 +8,66 @@ import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
 
 export const metadata: Metadata = {
-  title: 'Sun Tag And Title',
-  description: 'Your Vehicle Service Partner',
+  metadataBase: new URL('https://suntagandtitle.com'),
+  title: {
+    default: 'Sun Tag & Title | Maryland Tag Agency – Columbia, MD',
+    template: '%s | Sun Tag & Title – Columbia, MD',
+  },
+  description:
+    'Sun Tag & Title is a licensed Maryland tag agency in Columbia, MD. Same-day vehicle registration, title transfers, license plate renewals, temporary tags, and notary services. Walk-ins welcome.',
+  keywords: [
+    'Maryland tag agency',
+    'Columbia MD tag agency',
+    'vehicle title transfer Maryland',
+    'car registration Columbia MD',
+    'Maryland license plate renewal',
+    'MVA tag agency Columbia',
+    'temporary tag Maryland',
+    'duplicate title Maryland',
+    'vehicle registration renewal Howard County',
+    'notary Columbia MD',
+    'same day title transfer',
+    'Sun Tag and Title',
+    'suntagandtitle.com',
+  ],
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://suntagandtitle.com',
+    siteName: 'Sun Tag & Title',
+    title: 'Sun Tag & Title | Maryland Tag Agency – Columbia, MD',
+    description:
+      'Licensed Maryland tag agency in Columbia, MD. Same-day vehicle registration, title transfers, license plate renewals, temporary tags, and notary services.',
+    images: [
+      {
+        url: '/assets/hero-bg.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Sun Tag & Title – Maryland Tag Agency in Columbia, MD',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sun Tag & Title | Maryland Tag Agency – Columbia, MD',
+    description:
+      'Licensed Maryland tag agency in Columbia, MD. Same-day vehicle registration, title transfers, license plate renewals, and notary services.',
+    images: ['/assets/hero-bg.jpeg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-snippet': -1,
+      'max-image-preview': 'large',
+      'max-video-preview': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://suntagandtitle.com',
+  },
 };
 
 

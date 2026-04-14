@@ -18,7 +18,7 @@ const Footer = () => {
             <div className="container mx-auto px-4 text-center text-text-base">
                 <p>&copy; {new Date().getFullYear()} Sun Tag And Title. All rights reserved.</p>
                 <div className="flex justify-center space-x-6 mt-6">
-                    <a href="https://www.facebook.com/p/SUN-TAG-and-TITLE-61554522663897" target='_blank' className="text-text-base hover:text-blue-glow transition duration-200" aria-label="Facebook">
+                    <a href="https://www.facebook.com/p/SUN-TAG-and-TITLE-61554522663897" target='_blank' rel="noopener noreferrer" className="text-text-base hover:text-blue-glow transition duration-200" aria-label="Sun Tag & Title on Facebook">
                         <FacebookIcon className="h-6 w-6" />
                     </a>
                 </div>

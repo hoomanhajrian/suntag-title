@@ -2,8 +2,12 @@ import Link from "next/link";
 import WorkOffIcon from "@mui/icons-material/WorkOff";
 
 export const metadata = {
-  title: "Careers | Sun Tag And Title",
-  description: "Career opportunities at Sun Tag And Title.",
+  title: "Careers | Sun Tag & Title – Columbia, MD",
+  description:
+    "Career opportunities at Sun Tag & Title, a licensed Maryland tag agency in Columbia, MD. Check back for open positions.",
+  alternates: {
+    canonical: 'https://suntagandtitle.com/careers',
+  },
 };
 
 export default function CareersPage() {

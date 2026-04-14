@@ -1,8 +1,12 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Privacy Policy | Sun Tag And Title",
-  description: "Privacy Policy for Sun Tag And Title.",
+  title: "Privacy Policy | Sun Tag & Title – Columbia, MD",
+  description:
+    "Read the Privacy Policy for Sun Tag & Title, a licensed Maryland tag agency in Columbia, MD. Learn how we collect, use, and protect your information.",
+  alternates: {
+    canonical: 'https://suntagandtitle.com/privacy',
+  },
 };
 
 const sections = [
