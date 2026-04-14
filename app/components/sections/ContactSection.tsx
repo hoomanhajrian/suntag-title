@@ -2,15 +2,15 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import SmsIcon from "@mui/icons-material/Sms";
 
 const contactInfo = [
   {
     icon: <PhoneIcon fontSize="medium" />,
     iconColor: "text-blue-glow",
     label: "Phone",
-    value: "+1(443)-355-7141",
-    href: "tel:+14433557141",
+    value: "+1(410)-417-8272",
+    href: "tel:+14104178272",
   },
   {
     icon: <EmailIcon fontSize="medium" />,
@@ -97,17 +97,15 @@ const ContactSection = () => {
           ))}
         </div>
 
-        {/* WhatsApp CTA */}
+        {/* Text CTA */}
         <div className="relative z-10 flex justify-center mb-10">
           <a
-            href="https://wa.me/14433557141"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="sms:+14104178272"
             className="inline-flex items-center gap-3 px-8 py-4 rounded-sm font-bold text-white text-base uppercase tracking-widest transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
             style={{ backgroundColor: '#25D366' }}
           >
-            <WhatsAppIcon fontSize="medium" />
-            Chat with us
+            <SmsIcon fontSize="medium" />
+            Text us
           </a>
         </div>
 
