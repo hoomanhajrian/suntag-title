@@ -101,11 +101,11 @@ const ContactSection = () => {
         <div className="relative z-10 flex justify-center mb-10">
           <a
             href="sms:+14104178272"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-sm font-bold text-white text-base uppercase tracking-widest transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
+            className="inline-flex text-sm items-center gap-3 px-8 py-4 rounded-sm font-bold text-white text-base uppercase tracking-widest transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
             style={{ backgroundColor: '#25D366' }}
           >
             <SmsIcon fontSize="medium" />
-            Text us
+            Text For a Quote
           </a>
         </div>
 
