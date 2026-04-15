@@ -7,6 +7,7 @@ import BorderGlow from "../BorderGlow";
 
 const coreServices = [
   {
+    id: "on-site-processing",
     icon: <LocalOfferIcon className="w-8 h-8" />,
     title: "On-Site Processing",
     description:
@@ -22,6 +23,7 @@ const coreServices = [
     imageFilter: undefined,
   },
   {
+    id: "specialty-paperwork",
     icon: <ArticleIcon className="w-8 h-8" />,
     title: "Specialty Paperwork",
     description:
@@ -37,6 +39,7 @@ const coreServices = [
     imageFilter: undefined,
   },
   {
+    id: "notary",
     icon: <GavelIcon className="w-8 h-8" />,
     title: "Notary",
     description:
@@ -61,13 +64,13 @@ const cardColorSets = [
   { colors: ['#DC143C', '#1E90FF', '#FFC040'], glowColor: '348 83 58' },
 ];
 
-type Service = { icon: React.ReactNode; title: string; description: string; details: string[]; image: string; imageFilter?: string };
+type Service = { id: string; icon: React.ReactNode; title: string; description: string; details: string[]; image: string; imageFilter?: string };
 
 const ServiceRow = ({ service, colorIndex, reverse }: { service: Service; colorIndex: number; reverse: boolean }) => {
   const { colors, glowColor } = cardColorSets[colorIndex % 3];
   const overlayColor = colors[0];
   return (
-    <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-6 items-stretch`}>
+    <div id={service.id} className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-6 items-stretch scroll-mt-36`}>
       {/* Photo */}
       <div className="group/photo relative w-full lg:w-1/2 h-64 lg:h-auto lg:min-h-72 rounded-md overflow-hidden isolate bg-background/50 border border-white/5">
         <Image
