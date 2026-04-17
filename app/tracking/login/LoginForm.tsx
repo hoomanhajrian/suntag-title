@@ -73,6 +73,9 @@ export default function LoginForm() {
       >
         {loading ? 'Signing in…' : 'Sign In'}
       </button>
+      <Link href="/" className="block text-center text-sm text-text-base/50 hover:text-text-base transition-colors duration-200">
+        Back to website
+      </Link>
     </form>
   );
 }
