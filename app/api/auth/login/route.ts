@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { signSession } from '@/lib/auth';
+import { signSession, sessionMaxAge } from '@/lib/auth';
 
 function safeEqual(a: string, b: string): boolean {
   // Constant-time compare via HMAC of both strings
@@ -33,8 +33,8 @@ export async function POST(req: NextRequest) {
     response.cookies.set('tracking_session', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
-      maxAge: 60 * 60 * 8, // 8 hours
+      sameSite: 'lax',
+      maxAge: sessionMaxAge(),
       path: '/',
     });
     return response;
