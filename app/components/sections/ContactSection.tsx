@@ -1,8 +1,12 @@
+'use client';
+
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import SmsIcon from "@mui/icons-material/Sms";
+import { trackEvent } from "@/app/components/TrackPageView";
+import { usePathname } from "next/navigation";
 
 const contactInfo = [
   {
@@ -36,6 +40,16 @@ const contactInfo = [
 ];
 
 const ContactSection = () => {
+  const pathname = usePathname();
+
+  function handleContactClick(label: string, href: string) {
+    let event_type = 'contact_click';
+    if (href.startsWith('tel:')) event_type = 'call_click';
+    else if (href.startsWith('mailto:')) event_type = 'email_click';
+    else if (href.startsWith('https://maps') || href.includes('maps.google')) event_type = 'directions_click';
+    trackEvent(event_type, label, pathname);
+  }
+
   return (
     <section id="contact" className="bg-background py-24 px-6 scroll-mt-36">
       <div className="max-w-4xl mx-auto">
@@ -82,6 +96,7 @@ const ContactSection = () => {
                       href={item.href}
                       target={item.href.startsWith("http") ? "_blank" : undefined}
                       rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      onClick={() => handleContactClick(item.label, item.href!)}
                       className="text-text-base hover:text-gold-base transition-colors duration-200 text-sm whitespace-pre-line"
                     >
                       {item.value}
@@ -101,6 +116,7 @@ const ContactSection = () => {
         <div className="relative z-10 flex justify-center mb-10">
           <a
             href="sms:+14104178272"
+            onClick={() => trackEvent('sms_click', 'Text For a Quote', pathname)}
             className="inline-flex text-sm items-center gap-3 px-8 py-4 rounded-sm font-bold text-white text-base uppercase tracking-widest transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
             style={{ backgroundColor: '#25D366' }}
           >
@@ -129,6 +145,7 @@ const ContactSection = () => {
               href="https://maps.google.com/maps?q=10400+Shaker+Dr,+Columbia,+MD+21046,+USA"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent('directions_click', 'Get Directions map link', pathname)}
               className="text-blue-glow hover:text-gold-base text-xs font-semibold uppercase tracking-wider transition-colors duration-200"
             >
               Get Directions →
