@@ -258,17 +258,6 @@ export default function AnalyticsCharts({ events }: Props) {
 }
 
 
-interface Event {
-  timestamp: string;
-  event_type: string;
-  details: string;
-  page: string;
-}
-
-interface Props {
-  events: Event[];
-}
-
 const EVENT_KEYS = ['page_view', 'call_click', 'sms_click', 'directions_click', 'service_view'] as const;
 const EVENT_LABELS: Record<string, string> = {
   page_view: 'Page Views',
