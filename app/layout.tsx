@@ -1,12 +1,9 @@
-// src/app/layout.tsx (or layout.js)
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
 // Import the configured fonts
 import { dancingScript, montserrat } from './utils/fonts';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
-import BackToTop from './components/BackToTop';
+import SiteShell from './components/SiteShell';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://suntagandtitle.com'),
@@ -97,10 +94,9 @@ export default function RootLayout({
             pointerEvents: 'none',
           }}
         />
-        <Navigation />
-        {children}
-        <Footer />
-        <BackToTop />
+        <SiteShell>
+          {children}
+        </SiteShell>
         {/* Google Ads tag */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-11410639321"
