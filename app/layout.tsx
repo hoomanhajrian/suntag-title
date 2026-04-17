@@ -1,5 +1,6 @@
 // src/app/layout.tsx (or layout.js)
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css';
 // Import the configured fonts
 import { dancingScript, montserrat } from './utils/fonts';
@@ -100,6 +101,19 @@ export default function RootLayout({
         {children}
         <Footer />
         <BackToTop />
+        {/* Google Ads tag */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-11410639321"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-11410639321');
+          `}
+        </Script>
       </body>
     </html>
   );
