@@ -6,6 +6,7 @@ import { verifySession } from '@/lib/auth';
 import LogoutButton from './LogoutButton';
 import DashboardActions from './DashboardActions';
 import AnalyticsCharts from './AnalyticsCharts';
+import ReloadButton from './ReloadButton';
 
 const CSV_PATH = path.join(process.cwd(), 'analytics', 'events.csv');
 
@@ -100,7 +101,7 @@ export default async function TrackingPage() {
   const recent = events.slice(0, 200);
 
   return (
-    <div className="min-h-screen bg-background px-6 py-12">
+    <div className="min-h-screen bg-background px-6 pt-10 pb-12">
       <div className="max-w-5xl mx-auto space-y-10">
 
         {/* Header */}
@@ -115,6 +116,7 @@ export default async function TrackingPage() {
             </p>
           </div>
           <div className="flex items-center gap-3">
+            <ReloadButton />
             <DashboardActions />
             <LogoutButton />
           </div>

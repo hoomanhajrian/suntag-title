@@ -4,7 +4,7 @@ export const metadata = { title: 'Analytics Login | Sun Tag & Title' };
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center px-6">
+    <div className="min-h-screen bg-background flex items-center justify-center px-6 pt-8 pb-12">
       <div className="w-full max-w-sm">
 
         <div className="text-center mb-10 space-y-2">
