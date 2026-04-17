@@ -21,11 +21,19 @@ export default function TrackPageView() {
   return null;
 }
 
-/** Call this from any click handler */
+/** Call this from any click handler — uses sendBeacon so it survives link navigation */
 export function trackEvent(event_type: string, details: string, page: string) {
-  fetch('/api/track', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ event_type, details, page }),
-  }).catch(() => {/* silently ignore */});
+  const body = JSON.stringify({ event_type, details, page });
+  try {
+    if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
+      const blob = new Blob([body], { type: 'application/json' });
+      navigator.sendBeacon('/api/track', blob);
+    } else {
+      fetch('/api/track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body,
+      }).catch(() => {/* silently ignore */});
+    }
+  } catch {/* silently ignore */}
 }

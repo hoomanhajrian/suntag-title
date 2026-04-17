@@ -111,7 +111,7 @@ export default async function TrackingPage() {
               Analytics
             </span>
             <h1 className="text-3xl font-bold text-text-base mt-1">Tracking Dashboard</h1>
-            <p className="text-text-base/40 text-sm mt-1">
+            <p className="text-white/70 text-sm mt-1">
               {events.length} total event{events.length !== 1 ? 's' : ''} recorded
             </p>
           </div>
@@ -129,7 +129,7 @@ export default async function TrackingPage() {
               key={key}
               className={`border ${color} rounded-sm p-4 bg-background`}
             >
-              <p className="text-xs uppercase tracking-widest text-text-base/40 mb-1">{label}</p>
+              <p className="text-xs uppercase tracking-widest text-white/70 mb-1">{label}</p>
               <p className={`text-3xl font-bold ${color.split(' ')[1]}`}>
                 {counts[key] ?? 0}
               </p>
@@ -143,20 +143,20 @@ export default async function TrackingPage() {
         {/* Events Table */}
         <div className="border border-blue-base/20 rounded-sm overflow-hidden">
           <div className="px-5 py-3 border-b border-blue-base/20 bg-background">
-            <h2 className="text-sm font-semibold uppercase tracking-widest text-text-base/50">
+            <h2 className="text-sm font-semibold uppercase tracking-widest text-white/70">
               Recent Events {recent.length < events.length ? `(showing last ${recent.length})` : ''}
             </h2>
           </div>
 
           {recent.length === 0 ? (
-            <div className="px-5 py-10 text-center text-text-base/30 text-sm italic">
+            <div className="px-5 py-10 text-center text-white/50 text-sm italic">
               No events recorded yet. Start exploring the site to generate data.
             </div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-blue-base/10 text-text-base/30 text-xs uppercase tracking-widest">
+                    <tr className="border-b border-blue-base/10 text-white/60 text-xs uppercase tracking-widest">
                     <th className="text-left px-5 py-3">Time</th>
                     <th className="text-left px-5 py-3">Event</th>
                     <th className="text-left px-5 py-3">Details</th>
@@ -169,7 +169,7 @@ export default async function TrackingPage() {
                       key={i}
                       className="border-b border-blue-base/10 last:border-0 hover:bg-blue-base/5 transition-colors"
                     >
-                      <td className="px-5 py-3 text-text-base/50 whitespace-nowrap">
+                      <td className="px-5 py-3 text-white/65 whitespace-nowrap">
                         {formatDate(e.timestamp)}
                       </td>
                       <td className="px-5 py-3">
@@ -177,8 +177,8 @@ export default async function TrackingPage() {
                           {EVENT_LABELS[e.event_type] ?? e.event_type}
                         </span>
                       </td>
-                      <td className="px-5 py-3 text-text-base/70">{e.details || '—'}</td>
-                      <td className="px-5 py-3 text-text-base/40">{e.page || '—'}</td>
+                      <td className="px-5 py-3 text-white/80">{e.details || '—'}</td>
+                      <td className="px-5 py-3 text-white/60">{e.page || '—'}</td>
                     </tr>
                   ))}
                 </tbody>
