@@ -38,7 +38,7 @@ export const metadata: Metadata = {
       'Licensed Maryland tag agency in Columbia, MD. Same-day vehicle registration, title transfers, license plate renewals, temporary tags, and notary services.',
     images: [
       {
-        url: '/assets/hero-bg.jpeg',
+        url: '/logo.jpg',
         width: 1200,
         height: 630,
         alt: 'Sun Tag & Title – Maryland Tag Agency in Columbia, MD',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: 'Sun Tag & Title | Maryland Tag Agency – Columbia, MD',
     description:
       'Licensed Maryland tag agency in Columbia, MD. Same-day vehicle registration, title transfers, license plate renewals, and notary services.',
-    images: ['/assets/hero-bg.jpeg'],
+    images: ['/logo.jpg'],
   },
   robots: {
     index: true,
