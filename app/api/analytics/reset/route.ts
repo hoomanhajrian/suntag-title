@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { verifySession } from '@/lib/auth';
 import { writeFileSync, existsSync, mkdirSync } from 'fs';
+import { revalidatePath } from 'next/cache';
 import path from 'path';
 
 const CSV_DIR = path.join(process.cwd(), 'analytics');
@@ -17,6 +18,8 @@ export async function POST() {
 
   if (!existsSync(CSV_DIR)) mkdirSync(CSV_DIR, { recursive: true });
   writeFileSync(CSV_PATH, CSV_HEADER, 'utf8');
+
+  revalidatePath('/tracking');
 
   return NextResponse.json({ ok: true });
 }

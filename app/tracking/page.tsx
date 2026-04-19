@@ -2,6 +2,8 @@ import { readFileSync, existsSync } from 'fs';
 import path from 'path';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
+
+export const dynamic = 'force-dynamic';
 import { verifySession } from '@/lib/auth';
 import LogoutButton from './LogoutButton';
 import DashboardActions from './DashboardActions';
