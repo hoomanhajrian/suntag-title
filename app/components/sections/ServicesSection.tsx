@@ -4,7 +4,6 @@ import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import ArticleIcon from "@mui/icons-material/Article";
 import GavelIcon from "@mui/icons-material/Gavel";
 import BorderGlow from "../BorderGlow";
-import ServiceViewTracker from "../ServiceViewTracker";
 
 const coreServices = [
   {
@@ -72,7 +71,6 @@ const ServiceRow = ({ service, colorIndex, reverse }: { service: Service; colorI
   const overlayColor = colors[0];
   return (
     <div id={service.id} className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-6 items-stretch scroll-mt-36`}>
-      <ServiceViewTracker serviceId={service.id} serviceTitle={service.title} />
       {/* Photo */}
       <div className="group/photo relative w-full lg:w-1/2 h-64 lg:h-auto lg:min-h-72 rounded-md overflow-hidden isolate bg-background/50 border border-white/5">
         <Image

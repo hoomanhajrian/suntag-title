@@ -19,7 +19,7 @@ interface Props {
   events: Event[];
 }
 
-const EVENT_KEYS = ['page_view', 'call_click', 'sms_click', 'email_click', 'directions_click', 'service_view'] as const;
+const EVENT_KEYS = ['page_view', 'call_click', 'sms_click', 'email_click', 'directions_click'] as const;
 type EventKey = typeof EVENT_KEYS[number];
 
 const EVENT_LABELS: Record<string, string> = {
@@ -28,7 +28,6 @@ const EVENT_LABELS: Record<string, string> = {
   sms_click:        'SMS Clicks',
   email_click:      'Email Clicks',
   directions_click: 'Directions',
-  service_view:     'Service Views',
 };
 const EVENT_COLORS: Record<string, string> = {
   page_view:        '#1E90FF',
@@ -36,7 +35,6 @@ const EVENT_COLORS: Record<string, string> = {
   sms_click:        '#22c55e',
   email_click:      '#a78bfa',
   directions_click: '#DC143C',
-  service_view:     '#94a3b8',
 };
 
 const TIMEFRAMES = [

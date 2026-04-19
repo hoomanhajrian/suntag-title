@@ -63,7 +63,6 @@ const EVENT_LABELS: Record<string, string> = {
   call_click: 'Call Click',
   sms_click: 'SMS Click',
   directions_click: 'Directions Click',
-  service_view: 'Service View',
 };
 
 const EVENT_COLORS: Record<string, string> = {
@@ -71,7 +70,6 @@ const EVENT_COLORS: Record<string, string> = {
   call_click: 'text-gold-base bg-gold-base/10',
   sms_click: 'text-green-400 bg-green-400/10',
   directions_click: 'text-red-base bg-red-base/10',
-  service_view: 'text-text-base/60 bg-text-base/5',
 };
 
 export default async function TrackingPage() {
@@ -92,11 +90,10 @@ export default async function TrackingPage() {
   }
 
   const summaryCards = [
-    { key: 'page_view',       label: 'Page Views',      color: 'border-blue-base  text-blue-glow'  },
-    { key: 'call_click',      label: 'Call Clicks',     color: 'border-gold-base  text-gold-base'  },
-    { key: 'sms_click',       label: 'SMS Clicks',      color: 'border-green-500  text-green-400'  },
-    { key: 'directions_click',label: 'Directions',      color: 'border-red-base   text-red-base'   },
-    { key: 'service_view',    label: 'Service Views',   color: 'border-text-base/20 text-text-base/60' },
+    { key: 'page_view',       label: 'Page Views',  color: 'border-blue-base  text-blue-glow'  },
+    { key: 'call_click',      label: 'Call Clicks', color: 'border-gold-base  text-gold-base'  },
+    { key: 'sms_click',       label: 'SMS Clicks',  color: 'border-green-500  text-green-400'  },
+    { key: 'directions_click',label: 'Directions',  color: 'border-red-base   text-red-base'   },
   ];
 
   const recent = events.slice(0, 200);
