@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { appendFileSync, existsSync, mkdirSync } from 'fs';
+import { appendFileSync, existsSync } from 'fs';
 import path from 'path';
 
-const CSV_DIR = path.join(process.cwd(), 'analytics');
-const CSV_PATH = path.join(CSV_DIR, 'events.csv');
+const CSV_PATH = path.join('/tmp', 'events.csv');
 const CSV_HEADER = 'timestamp,event_type,details,page\n';
 
 function escape(val: string): string {
@@ -21,7 +20,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing event_type' }, { status: 400 });
     }
 
-    if (!existsSync(CSV_DIR)) mkdirSync(CSV_DIR, { recursive: true });
     if (!existsSync(CSV_PATH)) appendFileSync(CSV_PATH, CSV_HEADER, 'utf8');
 
     const timestamp = new Date().toISOString();

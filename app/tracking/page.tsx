@@ -1,5 +1,4 @@
 import { readFileSync, existsSync } from 'fs';
-import path from 'path';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
@@ -10,7 +9,7 @@ import DashboardActions from './DashboardActions';
 import AnalyticsCharts from './AnalyticsCharts';
 import ReloadButton from './ReloadButton';
 
-const CSV_PATH = path.join(process.cwd(), 'analytics', 'events.csv');
+const CSV_PATH = '/tmp/events.csv';
 
 interface Event {
   timestamp: string;

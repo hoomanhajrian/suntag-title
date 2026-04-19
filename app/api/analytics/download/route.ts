@@ -4,7 +4,7 @@ import { verifySession } from '@/lib/auth';
 import { readFileSync, existsSync } from 'fs';
 import path from 'path';
 
-const CSV_PATH = path.join(process.cwd(), 'analytics', 'events.csv');
+const CSV_PATH = '/tmp/events.csv';
 
 export async function GET() {
   const cookieStore = await cookies();
