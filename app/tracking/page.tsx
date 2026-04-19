@@ -8,6 +8,7 @@ import LogoutButton from './LogoutButton';
 import DashboardActions from './DashboardActions';
 import AnalyticsCharts from './AnalyticsCharts';
 import ReloadButton from './ReloadButton';
+import EventsTable from './EventsTable';
 
 const CSV_PATH = '/tmp/events.csv';
 
@@ -49,29 +50,6 @@ function parseCSV(raw: string): Event[] {
     .reverse(); // newest first
 }
 
-function formatDate(iso: string): string {
-  try {
-    return new Date(iso).toLocaleString('en-US', {
-      month: 'short', day: 'numeric', year: 'numeric',
-      hour: 'numeric', minute: '2-digit', hour12: true,
-    });
-  } catch { return iso; }
-}
-
-const EVENT_LABELS: Record<string, string> = {
-  page_view: 'Page View',
-  call_click: 'Call Click',
-  sms_click: 'SMS Click',
-  directions_click: 'Directions Click',
-};
-
-const EVENT_COLORS: Record<string, string> = {
-  page_view: 'text-blue-glow bg-blue-base/10',
-  call_click: 'text-gold-base bg-gold-base/10',
-  sms_click: 'text-green-400 bg-green-400/10',
-  directions_click: 'text-red-base bg-red-base/10',
-};
-
 export default async function TrackingPage() {
   // Auth check (middleware handles redirect, but double-check server-side)
   const cookieStore = await cookies();
@@ -96,7 +74,6 @@ export default async function TrackingPage() {
     { key: 'directions_click',label: 'Directions',  color: 'border-red-base   text-red-base'   },
   ];
 
-  const recent = events.slice(0, 200);
 
   return (
     <div className="min-h-screen bg-background px-6 pt-10 pb-12">
@@ -139,51 +116,7 @@ export default async function TrackingPage() {
         <AnalyticsCharts events={events} />
 
         {/* Events Table */}
-        <div className="border border-blue-base/20 rounded-sm overflow-hidden">
-          <div className="px-5 py-3 border-b border-blue-base/20 bg-background">
-            <h2 className="text-sm font-semibold uppercase tracking-widest text-white/70">
-              Recent Events {recent.length < events.length ? `(showing last ${recent.length})` : ''}
-            </h2>
-          </div>
-
-          {recent.length === 0 ? (
-            <div className="px-5 py-10 text-center text-white/50 text-sm italic">
-              No events recorded yet. Start exploring the site to generate data.
-            </div>
-          ) : (
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                    <tr className="border-b border-blue-base/10 text-white/60 text-xs uppercase tracking-widest">
-                    <th className="text-left px-5 py-3">Time</th>
-                    <th className="text-left px-5 py-3">Event</th>
-                    <th className="text-left px-5 py-3">Details</th>
-                    <th className="text-left px-5 py-3">Page</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {recent.map((e, i) => (
-                    <tr
-                      key={i}
-                      className="border-b border-blue-base/10 last:border-0 hover:bg-blue-base/5 transition-colors"
-                    >
-                      <td className="px-5 py-3 text-white/65 whitespace-nowrap">
-                        {formatDate(e.timestamp)}
-                      </td>
-                      <td className="px-5 py-3">
-                        <span className={`px-2 py-0.5 rounded-sm text-xs font-semibold ${EVENT_COLORS[e.event_type] ?? 'text-text-base/60 bg-text-base/5'}`}>
-                          {EVENT_LABELS[e.event_type] ?? e.event_type}
-                        </span>
-                      </td>
-                      <td className="px-5 py-3 text-white/80">{e.details || '—'}</td>
-                      <td className="px-5 py-3 text-white/60">{e.page || '—'}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-        </div>
+        <EventsTable events={events} />
 
       </div>
     </div>

@@ -1,0 +1,25 @@
+{
+  "name": "Sun Tag & Title – Analytics",
+  "short_name": "ST&T Analytics",
+  "description": "Analytics dashboard for Sun Tag & Title",
+  "start_url": "/tracking",
+  "scope": "/tracking",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#000000",
+  "theme_color": "#FFC040",
+  "icons": [
+    {
+      "src": "/app-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/app-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
