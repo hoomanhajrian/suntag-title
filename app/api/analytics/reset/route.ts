@@ -16,10 +16,13 @@ export async function POST() {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  if (!existsSync(CSV_DIR)) mkdirSync(CSV_DIR, { recursive: true });
-  writeFileSync(CSV_PATH, CSV_HEADER, 'utf8');
-
-  revalidatePath('/tracking');
-
-  return NextResponse.json({ ok: true });
+  try {
+    if (!existsSync(CSV_DIR)) mkdirSync(CSV_DIR, { recursive: true });
+    writeFileSync(CSV_PATH, CSV_HEADER, 'utf8');
+    revalidatePath('/tracking');
+    return NextResponse.json({ ok: true });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 }

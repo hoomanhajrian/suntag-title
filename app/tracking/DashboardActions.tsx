@@ -25,7 +25,12 @@ export default function DashboardActions() {
     if (res.ok) {
       router.refresh();
     } else {
-      alert('Reset failed. Please try again.');
+      let detail = `${res.status} ${res.statusText}`;
+      try {
+        const body = await res.json();
+        if (body?.error) detail = body.error;
+      } catch { /* ignore parse error */ }
+      alert(`Reset failed: ${detail}`);
     }
   }
 
