@@ -27,7 +27,7 @@ const localBusinessSchema = {
   email: 'amir@suntagandtitle.com',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '10400 Shaker Dr',
+    streetAddress: '10400 Shaker Dr Suite 8',
     addressLocality: 'Columbia',
     addressRegion: 'MD',
     postalCode: '21046',

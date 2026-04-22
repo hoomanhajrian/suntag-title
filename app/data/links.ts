@@ -6,6 +6,7 @@ export const footerLinks = {
     resources: [
       { key: 'blog', href: '/blog' },
       { key: 'FAQ', href: '/faq' },
+      { key: 'pricing', href: '/pricing' },
     ],
     legal: [
       { key: 'terms', href: '/terms' },

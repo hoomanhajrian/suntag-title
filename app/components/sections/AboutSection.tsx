@@ -1,11 +1,12 @@
 import Image from "next/image";
 
 const values = [
-  "Licensed and state-authorized tag agency",
+  "Licensed Maryland MVA-authorized tag agency — not a government office",
+  "Authorized non-government provider of state vehicle services",
   "Serving our community for over 5 years",
   "Same-day processing on most services",
   "Friendly, knowledgeable staff",
-  "Transparent pricing — no hidden fees",
+  "Transparent pricing — service fees separate from government fees",
   "Walk-ins welcome, no appointment needed",
 ];
 

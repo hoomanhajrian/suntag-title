@@ -11,6 +11,36 @@ export const metadata = {
 
 const sections = [
   {
+    number: "0",
+    title: "Non-Government Provider Disclosure",
+    content: (
+      <div className="space-y-3">
+        <p className="font-semibold text-gold-base">
+          IMPORTANT: This website and our services are NOT provided by the government.
+        </p>
+        <p>
+          Sun Tag &amp; Title is a <strong>privately owned, licensed tag agency</strong> authorized by the
+          State of Maryland to process Maryland Motor Vehicle Administration (MVA) transactions on behalf of customers.
+          We are <strong>not</strong> the Maryland MVA, the Maryland Department of Transportation, or any federal,
+          state, or local government agency.
+        </p>
+        <p>
+          As an authorized, non-government provider, we are explicitly permitted to facilitate the direct
+          acquisition of government documents and vehicle-related services including registrations, title
+          transfers, renewals, temporary tags, and notary services. Our authorization is granted by the
+          State of Maryland.
+        </p>
+        <p>
+          Our service fees are <strong>separate from and in addition to</strong> any government fees charged
+          by the Maryland MVA. For free direct government services, visit{" "}
+          <a href="https://mva.maryland.gov" target="_blank" rel="noopener noreferrer" className="text-gold-base underline hover:text-gold-light">
+            mva.maryland.gov
+          </a>.
+        </p>
+      </div>
+    ),
+  },
+  {
     number: "1",
     title: "Acceptance of Terms",
     content: (
@@ -24,9 +54,8 @@ const sections = [
           . If you do not agree, please do not use our site or services.
         </p>
         <p className="mt-3 text-text-base/50 italic text-sm">
-          Note: Sun Tag &amp; Title is a DHSMV-authorized Florida tag agency. We
-          are not the Department of Highway Safety and Motor Vehicles or any
-          government agency.
+          Note: Sun Tag &amp; Title is a Maryland MVA-authorized tag agency. We
+          are not the Maryland Motor Vehicle Administration or any government agency.
         </p>
       </>
     ),
@@ -45,7 +74,7 @@ const sections = [
           </li>
           <li>
             <strong className="text-text-base/90">Out-of-State Registrations</strong> —
-            processing for vehicles being brought into Florida from another
+            processing for vehicles being brought into Maryland from another
             state.
           </li>
           <li>
@@ -102,7 +131,7 @@ const sections = [
           transaction.
         </li>
         <li>
-          State and third-party fees (e.g., DHSMV fees, lien holder fees) are
+          State and third-party fees (e.g., Maryland MVA fees, lien holder fees) are
           separate from our service fees and are set by those entities.
         </li>
         <li>
@@ -151,7 +180,7 @@ const sections = [
     content: (
       <p>
         Certain services are performed through or in conjunction with
-        third-party systems (e.g., DHSMV/FLHSMV, TitleTec, NMVTIS, lien
+        third-party systems (e.g., Maryland MVA, TitleTec, NMVTIS, lien
         holders). By using those services, you acknowledge and agree to the
         applicable provider&apos;s own terms, identification requirements, processing
         timelines, refund policies, and liability limitations.
@@ -264,10 +293,10 @@ const sections = [
     title: "Governing Law & Venue",
     content: (
       <p>
-        These Terms are governed by the laws of the State of Florida. Any
+        These Terms are governed by the laws of the State of Maryland. Any
         dispute not resolved through direct communication shall be subject to
         the exclusive jurisdiction of the state and federal courts located in
-        Florida.
+        Maryland.
       </p>
     ),
   },

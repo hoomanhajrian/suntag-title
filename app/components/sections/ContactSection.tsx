@@ -38,7 +38,7 @@ const contactInfo = [
     icon: <LocationOnIcon fontSize="medium" />,
     iconColor: "text-red-base",
     label: "Address",
-    value: "10400 Shaker Dr\nColumbia, MD 21046, USA",
+    value: "10400 Shaker Dr Suite 8\nColumbia, MD 21046, USA",
     href: "https://maps.google.com/maps?q=10400+Shaker+Dr,+Columbia,+MD+21046,+USA",
   },
   {
@@ -367,7 +367,7 @@ const ContactSection = () => {
           />
           <div className="flex items-center justify-between px-5 py-3 bg-background border-t border-blue-base/20">
             <span className="text-text-base/50 text-xs uppercase tracking-widest">
-              10400 Shaker Dr, Columbia, MD 21046
+              10400 Shaker Dr Suite 8, Columbia, MD 21046
             </span>
             <a
               href="https://maps.google.com/maps?q=10400+Shaker+Dr,+Columbia,+MD+21046,+USA"

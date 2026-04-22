@@ -9,6 +9,13 @@ const Footer = () => {
     
     return (
         <footer className="relative z-10 bg-background pt-1 pb-8">
+            {/* ── Non-Government Disclaimer Banner ── */}
+            <div
+                className="w-full text-center text-xs font-semibold uppercase tracking-widest py-2 px-4 mb-1"
+                style={{ backgroundColor: '#1a2e52', color: '#FFC040' }}
+            >
+                This is NOT a government website. Sun Tag &amp; Title is a licensed, authorized non-government Maryland MVA tag agency.
+            </div>
             {/* Tri-color brand strip */}
             <div className="flex w-full h-0.5 mb-8">
                 <div className="flex-1 bg-blue-base" />
@@ -41,6 +48,14 @@ const Footer = () => {
                 <div className="mt-6 pt-4 border-t border-blue-base/30">
                     <p className="text-xs text-text-base/60">
                         Version {version}
+                    </p>
+                    <p className="text-xs text-text-base/40 mt-3 max-w-2xl mx-auto leading-relaxed">
+                        <strong className="text-text-base/60">Non-Government Provider Disclosure:</strong>{' '}
+                        Sun Tag &amp; Title is a privately owned, licensed Maryland MVA-authorized tag agency. This website is not affiliated with, endorsed by, or operated by
+                        the Maryland Motor Vehicle Administration (MVA), any state agency, or the federal government.
+                        Services offered facilitate government transactions on your behalf. Government fees are separate from our service fees.
+                        For direct government services, visit{' '}
+                        <a href="https://mva.maryland.gov" target="_blank" rel="noopener noreferrer" className="underline hover:text-gold-base transition-colors">mva.maryland.gov</a>.
                     </p>
                 </div>
             </div>

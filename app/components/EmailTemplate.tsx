@@ -231,7 +231,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
                 </Link>
               </Text>
               <Text style={{ color: "#555570", fontSize: "12px", textAlign: "center", margin: "4px 0 0" }}>
-                10400 Shaker Dr · Columbia, MD 21046 · +1 (410) 417-8272
+                10400 Shaker Dr Suite 8 · Columbia, MD 21046 · +1 (410) 417-8272
               </Text>
             </td>
           </tr>
