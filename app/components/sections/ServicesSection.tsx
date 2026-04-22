@@ -9,15 +9,15 @@ const coreServices = [
   {
     id: "on-site-processing",
     icon: <LocalOfferIcon className="w-8 h-8" />,
-    title: "On-Site Processing",
+    title: "Tag & Registration",
     description:
       "Same-day Maryland license plates, registration renewals, and title transfers — handled in one visit.",
     details: [
-      "New & replacement Maryland license plates",
-      "Vehicle registration renewals",
-      "Title transfers between private parties or dealers",
+      "Title Transfer",
+      "Vehicle Registration",
+      "Registration Renewal",
+      "Tag Return",
       "Same-day processing — no waiting weeks by mail",
-      "Friendly staff to guide you through every step",
     ],
     image: "/assets/on-site-processing-service.jpg",
     imageFilter: undefined,
@@ -27,10 +27,10 @@ const coreServices = [
     icon: <ArticleIcon className="w-8 h-8" />,
     title: "Specialty Paperwork",
     description:
-      "30-day temporary tags, duplicate titles, and out-of-state vehicle registrations handled with care.",
+      "Duplicate titles, temporary tags, out-of-state conversions, and lien work — handled with care.",
     details: [
+      "Duplicate Title",
       "30-day temporary paper tags",
-      "Duplicate/replacement title applications",
       "Out-of-state vehicle title conversions",
       "Lien releases and lien additions",
       "Name changes on existing titles",
@@ -124,7 +124,7 @@ const ServiceRow = ({ service, colorIndex, reverse }: { service: Service; colorI
             </p>
             <ul className="mt-1 flex flex-col gap-1.5">
               {service.details.map((detail) => (
-                <li key={detail} className="flex items-start gap-2 text-sm text-text-base/50">
+                <li key={detail} className="flex items-start gap-2 text-sm text-text-base/70">
                   <span className={`${iconColors[colorIndex % 3]} mt-0.5 shrink-0`}>&#8227;</span>
                   {detail}
                 </li>
