@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import ArticleIcon from "@mui/icons-material/Article";
 import GavelIcon from "@mui/icons-material/Gavel";
@@ -173,13 +174,19 @@ const ServicesSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-16 flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#contact"
             className="inline-block px-10 py-3 bg-gold-base text-background font-semibold uppercase tracking-wider rounded-sm hover:bg-gold-light transition-colors duration-200"
           >
             Get Started Today
           </a>
+          <Link
+            href="/pricing"
+            className="relative z-10 inline-block px-10 py-3 bg-red-base text-text-base font-semibold uppercase tracking-wider rounded-sm hover:bg-red-shadow transition-colors duration-200"
+          >
+            View Pricing
+          </Link>
         </div>
       </div>
     </section>
