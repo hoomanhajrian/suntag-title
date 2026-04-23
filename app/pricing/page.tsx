@@ -18,6 +18,14 @@ const services = [
     note: 'Valid Maryland auto insurance required before registration can be issued.',
   },
   {
+    name: '14 Day Temp Tag',
+    ourFee: 65,
+    description: 'Temporary 14-day Maryland tag issued while your title or registration is being processed.',
+    color: 'text-red-base',
+    border: 'hover:border-red-base',
+    note: 'Valid proof of insurance and ownership documentation required at time of issuance.',
+  },
+  {
     name: 'Registration Renewal',
     ourFee: 60,
     description: 'Annual or 2-year Maryland license plate and registration renewal.',
