@@ -48,6 +48,7 @@ const services = [
     color: 'text-blue-glow',
     border: 'hover:border-blue-glow',
     note: 'Required to stop registration fees from continuing to accrue.',
+    flatFee: true,
   },
 ];
 
@@ -99,23 +100,32 @@ export default function PricingPage() {
                 <p className="text-text-base/70 text-xs italic">{service.note}</p>
               </div>
               <div className="shrink-0 flex flex-row sm:flex-col items-center sm:items-end gap-3 sm:gap-1">
-                {/* Our service fee */}
-                <div className="text-center sm:text-right">
-                  <div className={`text-3xl font-bold ${service.color}`}>${service.ourFee}</div>
-                  <div className="text-white text-xs font-semibold mt-0.5 uppercase tracking-wide">Our Service Fee</div>
-                </div>
-                {/* Divider */}
-                <div className="hidden sm:flex items-center gap-2 my-1 w-full">
-                  <div className="flex-1 h-px bg-white/40" />
-                  <span className="text-white text-xs font-bold">+</span>
-                  <div className="flex-1 h-px bg-white/40" />
-                </div>
-                <span className="sm:hidden text-white text-lg font-bold">+</span>
-                {/* MVA fee */}
-                <div className="text-center sm:text-right">
-                  <div className="text-lg font-semibold text-white">Varies</div>
-                  <div className="text-white/80 text-xs uppercase tracking-wide">MD MVA State Fee</div>
-                </div>
+                {service.flatFee ? (
+                  <div className="text-center sm:text-right">
+                    <div className={`text-3xl font-bold ${service.color}`}>${service.ourFee}</div>
+                    <div className="text-white text-xs font-semibold mt-0.5 uppercase tracking-wide">Flat Fee</div>
+                  </div>
+                ) : (
+                  <>
+                    {/* Our service fee */}
+                    <div className="text-center sm:text-right">
+                      <div className={`text-3xl font-bold ${service.color}`}>${service.ourFee}</div>
+                      <div className="text-white text-xs font-semibold mt-0.5 uppercase tracking-wide">Our Service Fee</div>
+                    </div>
+                    {/* Divider */}
+                    <div className="hidden sm:flex items-center gap-2 my-1 w-full">
+                      <div className="flex-1 h-px bg-white/40" />
+                      <span className="text-white text-xs font-bold">+</span>
+                      <div className="flex-1 h-px bg-white/40" />
+                    </div>
+                    <span className="sm:hidden text-white text-lg font-bold">+</span>
+                    {/* MVA fee */}
+                    <div className="text-center sm:text-right">
+                      <div className="text-lg font-semibold text-white">Varies</div>
+                      <div className="text-white/80 text-xs uppercase tracking-wide">MD MVA State Fee</div>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           ))}
