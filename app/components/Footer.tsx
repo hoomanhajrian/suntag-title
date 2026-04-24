@@ -3,9 +3,36 @@ import { footerLinks } from '@/app/data/links';
 import Link from 'next/link';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import SmsIcon from '@mui/icons-material/Sms';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import XIcon from '@mui/icons-material/X';
+import IosShareIcon from '@mui/icons-material/IosShare';
+
+const SITE_URL = 'https://suntagandtitle.com';
+const SHARE_TEXT = 'Sun Tag & Title | Same-day vehicle registration, title transfers & more in Columbia, MD';
+
+const shareLinks = [
+  {
+    label: 'Sun Tag & Title on Facebook',
+    href: 'https://www.facebook.com/p/SUN-TAG-and-TITLE-61554522663897',
+    icon: <FacebookIcon fontSize="small" />,
+    color: 'hover:text-blue-glow',
+  },
+  {
+    label: 'Share on X',
+    href: `https://twitter.com/intent/tweet?url=${encodeURIComponent(SITE_URL)}&text=${encodeURIComponent(SHARE_TEXT)}`,
+    icon: <XIcon fontSize="small" />,
+    color: 'hover:text-white',
+  },
+  {
+    label: 'Share on WhatsApp',
+    href: `https://api.whatsapp.com/send?text=${encodeURIComponent(SHARE_TEXT + ' ' + SITE_URL)}`,
+    icon: <WhatsAppIcon fontSize="small" />,
+    color: 'hover:text-green-400',
+  },
+];
 
 const Footer = () => {
-    const version = '1.2.0'; // Semantic versioning: Major.Minor.Patch
+    const version = '2.1.3'; // Semantic versioning: Major.Minor.Patch
     
     return (
         <footer className="relative z-10 bg-background pt-1 pb-8">
@@ -24,10 +51,25 @@ const Footer = () => {
             </div>
             <div className="container mx-auto px-4 text-center text-text-base">
                 <p>&copy; {new Date().getFullYear()} Sun Tag And Title. All rights reserved.</p>
-                <div className="flex justify-center space-x-6 mt-6">
-                    <a href="https://www.facebook.com/p/SUN-TAG-and-TITLE-61554522663897" target='_blank' rel="noopener noreferrer" className="text-text-base hover:text-blue-glow transition duration-200" aria-label="Sun Tag & Title on Facebook">
-                        <FacebookIcon className="h-6 w-6" />
-                    </a>
+                <div className="flex flex-col items-center gap-3 mt-6">
+                    {/* Share buttons */}
+                    <div className="flex items-center gap-3">
+                        <span className="text-xs text-text-base/50 uppercase tracking-widest flex items-center gap-1">
+                            <IosShareIcon sx={{ fontSize: 14 }} /> Share
+                        </span>
+                        {shareLinks.map((s) => (
+                            <a
+                                key={s.label}
+                                href={s.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={s.label}
+                                className={`text-text-base/60 ${s.color} transition duration-200`}
+                            >
+                                {s.icon}
+                            </a>
+                        ))}
+                    </div>
                 </div>
                 <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6 mt-4 text-sm">
                     {Object.entries(footerLinks).map(([groupKey, links]) => (
