@@ -6,7 +6,7 @@ import { dancingScript, montserrat } from './utils/fonts';
 import SiteShell from './components/SiteShell';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://suntagandtitle.com'),
+  metadataBase: new URL('https://www.suntagandtitle.com'),
   title: {
     default: 'Sun Tag & Title | Maryland Tag Agency – Columbia, MD',
     template: '%s | Sun Tag & Title – Columbia, MD',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://suntagandtitle.com',
+    url: 'https://www.suntagandtitle.com',
     siteName: 'Sun Tag & Title',
     title: 'Sun Tag & Title | Maryland Tag Agency – Columbia, MD',
     description:
@@ -51,6 +51,9 @@ export const metadata: Metadata = {
     description:
       'Licensed Maryland tag agency in Columbia, MD. Same-day vehicle registration, title transfers, license plate renewals, and notary services.',
     images: ['/logo.jpg'],
+  },
+  alternates: {
+    canonical: 'https://www.suntagandtitle.com',
   },
   robots: {
     index: true,
