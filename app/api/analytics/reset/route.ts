@@ -1,12 +1,8 @@
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { verifySession } from '@/lib/auth';
-import { writeFileSync } from 'fs';
 import { revalidatePath } from 'next/cache';
-import path from 'path';
-
-const CSV_PATH = '/tmp/events.csv';
-const CSV_HEADER = 'timestamp,event_type,details,page\n';
+import { writeCSV, CSV_HEADER } from '@/lib/blob';
 
 export async function POST() {
   const cookieStore = await cookies();
@@ -16,7 +12,7 @@ export async function POST() {
   }
 
   try {
-    writeFileSync(CSV_PATH, CSV_HEADER, 'utf8');
+    await writeCSV(CSV_HEADER);
     revalidatePath('/tracking');
     return NextResponse.json({ ok: true });
   } catch (err) {

@@ -1,6 +1,6 @@
-import { readFileSync, existsSync } from 'fs';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
+import { readCSV } from '@/lib/blob';
 
 export const dynamic = 'force-dynamic';
 import { verifySession } from '@/lib/auth';
@@ -9,8 +9,6 @@ import DashboardActions from './DashboardActions';
 import AnalyticsCharts from './AnalyticsCharts';
 import ReloadButton from './ReloadButton';
 import EventsTable from './EventsTable';
-
-const CSV_PATH = '/tmp/events.csv';
 
 interface Event {
   timestamp: string;
@@ -58,9 +56,7 @@ export default async function TrackingPage() {
     redirect('/tracking/login');
   }
 
-  const events: Event[] = existsSync(CSV_PATH)
-    ? parseCSV(readFileSync(CSV_PATH, 'utf8'))
-    : [];
+  const events: Event[] = parseCSV(await readCSV());
 
   const counts: Record<string, number> = {};
   for (const e of events) {
