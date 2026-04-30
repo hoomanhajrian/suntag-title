@@ -6,7 +6,7 @@ interface Event {
   timestamp: string;
   event_type: string;
   details: string;
-  location: string;
+  page: string;
 }
 
 interface Props {
@@ -90,7 +90,7 @@ export default function EventsTable({ events }: Props) {
                       </span>
                     </td>
                     <td className="px-5 py-3 text-white/80">{e.details || '—'}</td>
-                    <td className="px-5 py-3 text-white/60">{e.location || '—'}</td>
+                    <td className="px-5 py-3 text-white/60">{e.page || '—'}</td>
                   </tr>
                 ))}
               </tbody>

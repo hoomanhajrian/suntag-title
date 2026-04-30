@@ -14,7 +14,7 @@ interface Event {
   timestamp: string;
   event_type: string;
   details: string;
-  location: string;
+  page: string;
 }
 
 function parseCSV(raw: string): Event[] {
@@ -42,7 +42,7 @@ function parseCSV(raw: string): Event[] {
         timestamp: cols[0] ?? '',
         event_type: cols[1] ?? '',
         details: cols[2] ?? '',
-        location: cols[3] ?? '',
+        page: cols[3] ?? '',
       };
     })
     .reverse(); // newest first
