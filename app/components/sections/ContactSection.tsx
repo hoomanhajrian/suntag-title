@@ -105,7 +105,7 @@ const ContactSection = () => {
     if (href.startsWith('tel:')) event_type = 'call_click';
     else if (href.startsWith('mailto:')) event_type = 'email_click';
     else if (href.startsWith('https://maps') || href.includes('maps.google')) event_type = 'directions_click';
-    trackEvent(event_type, label, pathname);
+    trackEvent(event_type, label);
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -134,7 +134,7 @@ const ContactSection = () => {
         recordSubmission();
         setStatus('success');
         setForm({ name: '', company: '', email: '', phone: '', request: '', message: '' });
-        trackEvent('contact_form_submit', form.request || 'General Inquiry', pathname);
+        trackEvent('contact_form_submit', form.request || 'General Inquiry');
       }
     } catch {
       setErrorMsg('Network error. Please try again.');
@@ -344,7 +344,7 @@ const ContactSection = () => {
         <div className="relative z-10 flex justify-center mb-10">
           <a
             href="sms:+14104178272"
-            onClick={() => trackEvent('sms_click', 'Text For a Quote', pathname)}
+            onClick={() => trackEvent('sms_click', 'Text For a Quote')}
             className="inline-flex text-sm items-center gap-3 px-8 py-4 rounded-sm font-bold text-white text-base uppercase tracking-widest transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
             style={{ backgroundColor: '#25D366' }}
           >
@@ -373,7 +373,7 @@ const ContactSection = () => {
               href="https://maps.google.com/maps?q=10400+Shaker+Dr,+Columbia,+MD+21046,+USA"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackEvent('directions_click', 'Get Directions map link', pathname)}
+              onClick={() => trackEvent('directions_click', 'Get Directions map link')}
               className="text-blue-glow hover:text-gold-base text-xs font-semibold uppercase tracking-wider transition-colors duration-200"
             >
               Get Directions →

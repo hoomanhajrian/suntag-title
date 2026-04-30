@@ -23,7 +23,7 @@ export default function ServiceViewTracker({ serviceId, serviceTitle }: Props) {
       ([entry]) => {
         if (entry.isIntersecting && !firedRef.current) {
           firedRef.current = true;
-          trackEvent('service_view', serviceTitle, window.location.pathname);
+          trackEvent('service_view', serviceTitle);
           observer.disconnect();
         }
       },

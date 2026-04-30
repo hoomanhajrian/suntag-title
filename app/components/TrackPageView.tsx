@@ -13,7 +13,6 @@ export default function TrackPageView() {
       body: JSON.stringify({
         event_type: 'page_view',
         details: document.title,
-        page: pathname,
       }),
     }).catch(() => {/* silently ignore */});
   }, [pathname]);
@@ -22,8 +21,8 @@ export default function TrackPageView() {
 }
 
 /** Call this from any click handler — uses sendBeacon so it survives link navigation */
-export function trackEvent(event_type: string, details: string, page: string) {
-  const body = JSON.stringify({ event_type, details, page });
+export function trackEvent(event_type: string, details: string) {
+  const body = JSON.stringify({ event_type, details });
   try {
     if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
       const blob = new Blob([body], { type: 'application/json' });
