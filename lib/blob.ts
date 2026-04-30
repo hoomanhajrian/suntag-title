@@ -7,7 +7,7 @@ export async function readCSV(): Promise<string> {
   try {
     const { blobs } = await list({ prefix: BLOB_PATHNAME });
     if (blobs.length === 0) return CSV_HEADER;
-    const res = await fetch(blobs[0].url, { cache: 'no-store' });
+    const res = await fetch(blobs[0].downloadUrl, { cache: 'no-store' });
     if (!res.ok) return CSV_HEADER;
     return await res.text();
   } catch {
@@ -17,7 +17,7 @@ export async function readCSV(): Promise<string> {
 
 export async function writeCSV(content: string): Promise<void> {
   await put(BLOB_PATHNAME, content, {
-    access: 'public',
+    access: 'private',
     addRandomSuffix: false,
   });
 }
