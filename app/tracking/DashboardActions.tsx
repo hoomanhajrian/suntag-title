@@ -38,17 +38,17 @@ export default function DashboardActions() {
     <div className="flex items-center gap-3">
       <button
         onClick={handleDownload}
-        className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold uppercase tracking-wider text-gold-base border border-gold-base/40 rounded-sm hover:bg-gold-base/10 transition-colors duration-200"
+        className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 text-sm font-semibold uppercase tracking-wider text-gold-base border border-gold-base/40 rounded-sm hover:bg-gold-base/10 transition-colors duration-200"
       >
         <DownloadIcon fontSize="small" />
-        Download CSV
+        <span className="hidden sm:inline">Download CSV</span>
       </button>
       <button
         onClick={handleReset}
-        className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold uppercase tracking-wider text-red-base border border-red-base/40 rounded-sm hover:bg-red-base/10 transition-colors duration-200"
+        className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 text-sm font-semibold uppercase tracking-wider text-red-base border border-red-base/40 rounded-sm hover:bg-red-base/10 transition-colors duration-200"
       >
         <DeleteForeverIcon fontSize="small" />
-        Reset Data
+        <span className="hidden sm:inline">Reset Data</span>
       </button>
     </div>
   );

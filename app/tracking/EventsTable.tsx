@@ -13,7 +13,7 @@ interface Props {
   events: Event[];
 }
 
-const PAGE_SIZE = 25;
+const PAGE_SIZE = 5;
 
 const EVENT_LABELS: Record<string, string> = {
   page_view:        'Page View',
@@ -69,10 +69,10 @@ export default function EventsTable({ events }: Props) {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-blue-base/10 text-white/60 text-xs uppercase tracking-widest">
-                  <th className="text-left px-5 py-3">Time</th>
-                  <th className="text-left px-5 py-3">Event</th>
-                  <th className="text-left px-5 py-3">Details</th>
-                  <th className="text-left px-5 py-3">Location</th>
+                  <th className="text-left px-3 sm:px-5 py-3">Time</th>
+                  <th className="text-left px-3 sm:px-5 py-3">Event</th>
+                  <th className="text-left px-3 sm:px-5 py-3">Details</th>
+                  <th className="text-left px-3 sm:px-5 py-3">Location</th>
                 </tr>
               </thead>
               <tbody>
@@ -81,16 +81,16 @@ export default function EventsTable({ events }: Props) {
                     key={start + i}
                     className="border-b border-blue-base/10 last:border-0 hover:bg-blue-base/5 transition-colors"
                   >
-                    <td className="px-5 py-3 text-white/65 whitespace-nowrap">
+                    <td className="px-3 sm:px-5 py-2 sm:py-3 text-white/65 whitespace-nowrap text-xs sm:text-sm">
                       {formatDate(e.timestamp)}
                     </td>
-                    <td className="px-5 py-3">
+                    <td className="px-3 sm:px-5 py-2 sm:py-3">
                       <span className={`px-2 py-0.5 rounded-sm text-xs font-semibold ${EVENT_COLORS[e.event_type] ?? 'text-text-base/60 bg-text-base/5'}`}>
                         {EVENT_LABELS[e.event_type] ?? e.event_type}
                       </span>
                     </td>
-                    <td className="px-5 py-3 text-white/80">{e.details || '—'}</td>
-                    <td className="px-5 py-3 text-white/60">{e.page || '—'}</td>
+                    <td className="px-3 sm:px-5 py-2 sm:py-3 text-white/80 text-xs sm:text-sm">{e.details || '—'}</td>
+                    <td className="px-3 sm:px-5 py-2 sm:py-3 text-white/60 text-xs sm:text-sm">{e.page || '—'}</td>
                   </tr>
                 ))}
               </tbody>
@@ -99,35 +99,66 @@ export default function EventsTable({ events }: Props) {
 
           {/* Pagination controls */}
           {totalPages > 1 && (
-            <div className="px-5 py-3 border-t border-blue-base/20 flex items-center justify-between gap-4">
+            <div className="px-3 sm:px-5 py-3 border-t border-blue-base/20 flex items-center justify-between gap-2">
+              {/* Prev */}
               <button
                 onClick={() => setPage((p) => Math.max(1, p - 1))}
                 disabled={page === 1}
-                className="px-3 py-1.5 text-xs font-semibold uppercase tracking-wider border border-blue-base/30 rounded-sm text-blue-glow hover:bg-blue-base/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+                className="px-3 py-1.5 text-xs font-semibold uppercase tracking-wider border border-blue-base/30 rounded-sm text-blue-glow hover:bg-blue-base/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed shrink-0"
               >
                 ← Prev
               </button>
 
-              <div className="flex items-center gap-1">
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
-                  <button
-                    key={p}
-                    onClick={() => setPage(p)}
-                    className={`w-8 h-8 text-xs font-semibold rounded-sm transition-colors ${
-                      p === page
-                        ? 'bg-blue-base/20 text-blue-glow border border-blue-base/50'
-                        : 'text-white/50 hover:bg-blue-base/10 hover:text-white/80'
-                    }`}
-                  >
-                    {p}
-                  </button>
-                ))}
+              {/* Page numbers — windowed so only ~5 buttons show at once */}
+              <div className="flex items-center gap-1 overflow-hidden">
+                {(() => {
+                  const WINDOW = 2; // pages on each side of current
+                  const pages: (number | 'ellipsis-start' | 'ellipsis-end')[] = [];
+
+                  for (let p = 1; p <= totalPages; p++) {
+                    if (
+                      p === 1 ||
+                      p === totalPages ||
+                      (p >= page - WINDOW && p <= page + WINDOW)
+                    ) {
+                      pages.push(p);
+                    } else if (p === page - WINDOW - 1) {
+                      pages.push('ellipsis-start');
+                    } else if (p === page + WINDOW + 1) {
+                      pages.push('ellipsis-end');
+                    }
+                  }
+
+                  return pages.map((item) => {
+                    if (item === 'ellipsis-start' || item === 'ellipsis-end') {
+                      return (
+                        <span key={item} className="w-8 h-8 flex items-center justify-center text-white/30 text-xs select-none">
+                          …
+                        </span>
+                      );
+                    }
+                    return (
+                      <button
+                        key={item}
+                        onClick={() => setPage(item)}
+                        className={`w-8 h-8 text-xs font-semibold rounded-sm transition-colors shrink-0 ${
+                          item === page
+                            ? 'bg-blue-base/20 text-blue-glow border border-blue-base/50'
+                            : 'text-white/50 hover:bg-blue-base/10 hover:text-white/80'
+                        }`}
+                      >
+                        {item}
+                      </button>
+                    );
+                  });
+                })()}
               </div>
 
+              {/* Next */}
               <button
                 onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                 disabled={page === totalPages}
-                className="px-3 py-1.5 text-xs font-semibold uppercase tracking-wider border border-blue-base/30 rounded-sm text-blue-glow hover:bg-blue-base/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+                className="px-3 py-1.5 text-xs font-semibold uppercase tracking-wider border border-blue-base/30 rounded-sm text-blue-glow hover:bg-blue-base/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed shrink-0"
               >
                 Next →
               </button>

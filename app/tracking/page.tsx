@@ -72,21 +72,21 @@ export default async function TrackingPage() {
 
 
   return (
-    <div className="min-h-screen bg-background px-6 pt-10 pb-12">
-      <div className="max-w-5xl mx-auto space-y-10">
+    <div className="min-h-screen bg-background px-4 sm:px-6 pt-6 sm:pt-10 pb-12">
+      <div className="max-w-5xl mx-auto space-y-8 sm:space-y-10">
 
         {/* Header */}
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <span className="text-gold-base text-xs font-semibold uppercase tracking-widest">
               Analytics
             </span>
-            <h1 className="text-3xl font-bold text-text-base mt-1">Tracking Dashboard</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-text-base mt-1">Tracking Dashboard</h1>
             <p className="text-white/70 text-sm mt-1">
               {events.length} total event{events.length !== 1 ? 's' : ''} recorded
             </p>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <ReloadButton />
             <DashboardActions />
             <LogoutButton />

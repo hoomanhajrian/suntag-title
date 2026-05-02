@@ -26,7 +26,7 @@ export default function ReloadButton() {
     <button
       onClick={doRefresh}
       title="Reload latest data"
-      className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold uppercase tracking-wider text-blue-glow border border-blue-base/40 rounded-sm hover:bg-blue-base/10 transition-colors duration-200"
+      className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 text-sm font-semibold uppercase tracking-wider text-blue-glow border border-blue-base/40 rounded-sm hover:bg-blue-base/10 transition-colors duration-200"
     >
       <RefreshIcon
         fontSize="small"
@@ -35,7 +35,7 @@ export default function ReloadButton() {
           transform: spinning ? 'rotate(360deg)' : 'rotate(0deg)',
         }}
       />
-      Refresh
+      <span className="hidden sm:inline">Refresh</span>
     </button>
   );
 }
