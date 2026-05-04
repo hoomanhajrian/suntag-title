@@ -9,6 +9,7 @@ import DashboardActions from './DashboardActions';
 import AnalyticsCharts from './AnalyticsCharts';
 import ReloadButton from './ReloadButton';
 import EventsTable from './EventsTable';
+import ReportsPanel from './ReportsPanel';
 
 interface Event {
   timestamp: string;
@@ -113,6 +114,9 @@ export default async function TrackingPage() {
 
         {/* Events Table */}
         <EventsTable events={events} />
+
+        {/* Archived Reports */}
+        <ReportsPanel />
 
       </div>
     </div>

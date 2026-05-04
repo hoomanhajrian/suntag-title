@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { verifySession } from '@/lib/auth';
 import { revalidatePath } from 'next/cache';
-import { writeCSV, CSV_HEADER } from '@/lib/blob';
+import { readCSV, writeCSV, archiveCurrentCSV, CSV_HEADER } from '@/lib/blob';
 
 export async function POST() {
   const cookieStore = await cookies();
@@ -12,6 +12,8 @@ export async function POST() {
   }
 
   try {
+    const current = await readCSV();
+    await archiveCurrentCSV(current);
     await writeCSV(CSV_HEADER);
     revalidatePath('/tracking');
     return NextResponse.json({ ok: true });
