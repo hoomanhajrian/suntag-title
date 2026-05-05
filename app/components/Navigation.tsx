@@ -75,7 +75,7 @@ const Navigation = () => {
         <header className="header">
             {/* ── Sliding contact bar ── */}
             <div
-                className="fixed left-0 right-0 z-40 flex items-stretch text-xs font-semibold transition-transform duration-300 ease-in-out"
+                className="fixed left-0 right-0 z-40 flex items-stretch text-xs font-semibold transition-transform duration-300 ease-in-out pt-1"
                 style={{
                     top: 0,
                     height: 36,
@@ -104,7 +104,7 @@ const Navigation = () => {
             </div>
 
             <nav
-                className={`fixed left-0 right-0 w-full bg-background z-50 transition-shadow duration-300 ${isScrolled ? 'shadow-lg bg-background/95' : ''}`}
+                className={`fixed left-0 right-0 w-full bg-background z-50 transition-shadow duration-300 p-2 ${isScrolled ? 'shadow-lg bg-background/95' : ''}`}
                 style={{ top: barVisible ? 36 : 0, transition: 'top 0.3s ease-in-out, box-shadow 0.3s' }}
             >
                 {/* ── DESKTOP (lg+) — single always-present row ── */}
