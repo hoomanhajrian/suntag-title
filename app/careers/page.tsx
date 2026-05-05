@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function CareersPage() {
   return (
-    <main className="bg-background min-h-screen flex flex-col items-center justify-center px-6 py-24 text-center">
+    <main className="bg-background min-h-screen flex flex-col items-center justify-center px-6 pt-48 pb-24 text-center">
       <div className="max-w-md space-y-6">
         <div className="flex justify-center text-gold-base">
           <WorkOffIcon style={{ fontSize: 64 }} />

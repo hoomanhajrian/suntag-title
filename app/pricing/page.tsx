@@ -54,7 +54,7 @@ const services = [
 
 export default function PricingPage() {
   return (
-    <main className="min-h-screen bg-background px-6 py-38">
+    <main className="min-h-screen bg-background px-6 pt-48 pb-32">
       <div className="max-w-4xl mx-auto">
 
         {/* Header */}

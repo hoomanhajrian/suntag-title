@@ -4,7 +4,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center px-6 py-32 overflow-hidden bg-background"
+      className="relative min-h-screen flex flex-col items-center justify-center px-6 pb-32 pt-48 overflow-hidden bg-background"
     >
       {/* ── Hero background image ── */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -89,7 +89,7 @@ const HeroSection = () => {
 
       {/* Scroll indicator */}
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce z-10">
         <span className="text-gold-base text-xs font-semibold uppercase tracking-widest">Scroll</span>
         <div className="flex flex-col items-center gap-0.5">
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="text-gold-base drop-shadow-[0_0_6px_#FFC040]">
