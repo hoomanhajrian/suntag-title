@@ -32,10 +32,21 @@ const sections = [
         </p>
         <p>
           Our service fees are <strong>separate from and in addition to</strong> any government fees charged
-          by the Maryland MVA. For free direct government services, visit{" "}
+          by the Maryland MVA. For free direct government services, visit the official Maryland Motor Vehicle
+          Administration at{" "}
           <a href="https://mva.maryland.gov" target="_blank" rel="noopener noreferrer" className="text-gold-base underline hover:text-gold-light">
             mva.maryland.gov
+          </a>{" "}
+          or the State of Maryland portal at{" "}
+          <a href="https://maryland.gov" target="_blank" rel="noopener noreferrer" className="text-gold-base underline hover:text-gold-light">
+            maryland.gov
           </a>.
+        </p>
+        <p>
+          Official Maryland government websites operate under <strong>maryland.gov</strong> or{" "}
+          <strong>md.gov</strong> domains. Our website (<strong>suntagandtitle.com</strong>) is a
+          privately registered commercial domain and is not operated by, affiliated with, or
+          endorsed by the Maryland Department of Information Technology (DoIT) or any state agency.
         </p>
       </div>
     ),
@@ -325,6 +336,39 @@ const sections = [
       </p>
     ),
   },
+  {
+    number: "17",
+    title: "Accessibility Statement",
+    content: (
+      <>
+        <p>
+          Sun Tag &amp; Title is committed to ensuring this website is accessible
+          to all users, including individuals with disabilities. We aim to conform
+          with <strong>Web Content Accessibility Guidelines (WCAG) 2.1 Level AA</strong>,
+          in alignment with Maryland&apos;s digital experience standards for public-facing
+          websites.
+        </p>
+        <p className="mt-3">
+          If you encounter an accessibility barrier on this site, please contact us
+          so we can address it. This commitment reflects our dedication to serving
+          every member of our community.
+        </p>
+      </>
+    ),
+  },
+  {
+    number: "18",
+    title: "Website Security",
+    content: (
+      <p>
+        This website is operated exclusively over <strong>HTTPS</strong> to ensure
+        encrypted, secure communication between your browser and our servers. We
+        do not transmit sensitive personal or financial data through unsecured
+        web forms. In-office transactions are handled in accordance with applicable
+        Maryland state security and privacy requirements.
+      </p>
+    ),
+  },
 ];
 
 export default function TermsPage() {
@@ -345,7 +389,7 @@ export default function TermsPage() {
             <div className="h-1 w-8 bg-gold-base rounded-full" />
           </div>
           <div className="text-text-base/50 text-sm pt-2 space-y-0.5">
-            <p>Effective Date: April 12, 2026</p>
+            <p>Effective Date: May 9, 2026</p>
             <p>Company: Sun Tag &amp; Title</p>
             <p>
               Website:{" "}

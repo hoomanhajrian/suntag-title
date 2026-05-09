@@ -139,6 +139,81 @@ const sections = [
       </p>
     ),
   },
+  {
+    title: "Accessibility",
+    content: (
+      <>
+        <p>
+          Sun Tag &amp; Title is committed to making this website accessible to
+          all users, including those with disabilities. We strive to meet the
+          <strong> Web Content Accessibility Guidelines (WCAG) 2.1 Level AA</strong>{" "}
+          standards as established by the W3C and referenced in Maryland's
+          digital standards for public-facing websites.
+        </p>
+        <p className="mt-3">
+          If you experience difficulty accessing any content on this site, please
+          contact us directly so we may assist you and address any barriers.
+          Accessibility improvement is an ongoing effort and we welcome feedback.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "Website Security",
+    content: (
+      <p>
+        This website is served exclusively over <strong>HTTPS</strong> (HyperText
+        Transfer Protocol Secure), meaning all data transmitted between your
+        browser and our server is encrypted in transit. We do not collect
+        sensitive personal or financial information through web forms. For
+        in-office transactions, additional security measures apply as required
+        by the State of Maryland.
+      </p>
+    ),
+  },
+  {
+    title: "Official Maryland Government Resources",
+    content: (
+      <>
+        <p>
+          Sun Tag &amp; Title is a <strong>privately owned, licensed tag agency</strong>{" "}
+          — we are not a Maryland state agency and this website is not operated
+          under a <code>maryland.gov</code> domain. Official State of Maryland services
+          and authoritative government information are available at:
+        </p>
+        <ul className="mt-3 space-y-1 list-disc list-inside">
+          <li>
+            <a
+              href="https://maryland.gov"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold-base underline hover:text-gold-glow"
+            >
+              maryland.gov
+            </a>{" "}
+            — Official State of Maryland portal
+          </li>
+          <li>
+            <a
+              href="https://mva.maryland.gov"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold-base underline hover:text-gold-glow"
+            >
+              mva.maryland.gov
+            </a>{" "}
+            — Maryland Motor Vehicle Administration
+          </li>
+        </ul>
+        <p className="mt-3">
+          When in doubt about whether a website is an official government site,
+          look for a <code>.maryland.gov</code> or <code>.md.gov</code> domain.
+          Our site (<code>suntagandtitle.com</code>) is an authorized private
+          service provider — not a government website.
+        </p>
+      </>
+    ),
+  },
 ];
 
 export default function PrivacyPage() {
@@ -159,7 +234,7 @@ export default function PrivacyPage() {
             <div className="h-1 w-8 bg-gold-base rounded-full" />
           </div>
           <p className="text-text-base/50 text-sm pt-2">
-            Last updated: April 12, 2026
+            Last updated: May 9, 2026
           </p>
         </div>
 
