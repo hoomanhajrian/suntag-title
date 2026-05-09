@@ -35,7 +35,7 @@ const Footer = () => {
     const version = '2.1.3'; // Semantic versioning: Major.Minor.Patch
     
     return (
-        <footer className="relative z-10 bg-background pt-1 pb-8">
+        <footer className="relative z-10 bg-[#1a2e52] pt-1 pb-8">
             {/* ── Non-Government Disclaimer Banner ── */}
             <div
                 className="w-full text-center text-xs font-semibold uppercase tracking-widest py-2 px-4 mb-1"

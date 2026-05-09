@@ -75,7 +75,7 @@ const Navigation = () => {
             <ContactBar visible={barVisible} />
 
             <nav
-                className={`fixed left-0 right-0 w-full bg-background z-50 transition-shadow duration-300 p-2 ${isScrolled ? 'shadow-lg bg-background/95' : ''}`}
+                className={`fixed left-0 right-0 w-full bg-[#1a2e52] z-50 transition-shadow duration-300 p-2 ${isScrolled ? 'shadow-lg bg-[#1a2e52]/95' : ''}`}
                 style={{ top: barVisible ? 36 : 0, transition: 'top 0.3s ease-in-out, box-shadow 0.3s' }}
             >
                 {/* ── DESKTOP (lg+) — single always-present row ── */}
@@ -166,7 +166,7 @@ const Navigation = () => {
                 <div
                     ref={menuRef}
                     id="navbar-mobile"
-                    className={`lg:hidden absolute left-0 right-0 top-full bg-background border-b border-red-base transition-all duration-300 ease-in-out overflow-hidden ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                    className={`lg:hidden absolute left-0 right-0 top-full bg-[#1a2e52] border-b border-red-base transition-all duration-300 ease-in-out overflow-hidden ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                 >
                     <ul className="flex flex-col p-4 font-bold text-center w-full gap-1">
                         {navItems.map((item, i) => (
