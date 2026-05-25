@@ -31,7 +31,7 @@ const coreServices = [
       "Duplicate titles, temporary tags, out-of-state conversions, and lien work — handled with care.",
     details: [
       "Duplicate Title",
-      "30-day temporary paper tags",
+      "30-day temporary tags",
       "Out-of-state vehicle title conversions",
       "Lien releases and lien additions",
       "Name changes on existing titles",
