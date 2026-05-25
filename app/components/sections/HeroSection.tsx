@@ -53,7 +53,7 @@ const HeroSection = () => {
 
         {/* Sub-headline */}
         <p className="text-text-base/70 text-lg md:text-xl max-w-2xl leading-relaxed">
-          Fast, reliable, and hassle-free vehicle registration, tags, and title
+          Professional, MVA-authorized vehicle registration, tags, and title
           services in <span className="text-gold-base font-semibold">Columbia, Maryland</span> — all in one place.
         </p>
 
@@ -61,6 +61,13 @@ const HeroSection = () => {
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm border border-gold-base/40 bg-gold-base/5 text-xs text-text-base/60 tracking-wide">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold-base shrink-0" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
           <span>Maryland MVA Licensed Title Service Agent &mdash; License No. <span className="text-gold-base font-semibold">TS10010139</span></span>
+        </div>
+
+        {/* Non-government disclosure */}
+        <div className="inline-flex flex-col sm:flex-row items-center gap-2 px-5 py-3 rounded-sm border border-white/20 bg-white/5 text-xs text-text-base/70 tracking-wide text-center max-w-xl">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-red-base shrink-0" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span><strong className="text-text-base">Non-Government, Private Provider:</strong> Sun Tag &amp; Title is privately owned and is not affiliated with the Maryland MVA or any government agency. Service fees apply. For free direct government services, visit{' '}
+          <a href="https://mva.maryland.gov" target="_blank" rel="noopener noreferrer" className="underline hover:text-gold-base transition-colors">mva.maryland.gov</a>.</span>
         </div>
 
         {/* CTA Buttons */}

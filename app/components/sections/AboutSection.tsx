@@ -46,9 +46,9 @@ const AboutSection = () => {
             <p className="text-text-base/70 leading-relaxed">
               Sun Tag &amp; Title is a licensed Maryland tag agency located in{" "}
               <span className="text-gold-base font-semibold">Columbia, Maryland</span>, dedicated to
-              making vehicle services fast and stress-free. We take the hassle
-              out of DMV visits by offering the same state-authorized services
-              right in your neighborhood.
+              making vehicle services straightforward and efficient. We offer
+              the same state-authorized services as the MVA, conveniently
+              located right in your neighborhood.
             </p>
             <p className="text-text-base/70 leading-relaxed">
               Whether you are registering a brand-new car, transferring a title
