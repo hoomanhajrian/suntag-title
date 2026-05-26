@@ -97,15 +97,19 @@ const Navigation = () => {
                         <Link href="/" className="flex flex-col items-center gap-0.5">
                             <Image
                                 src="/app-logo.png"
-                                alt="sun-tag-and-title-logo"
+                                alt="Sun Tag and Title logo"
                                 width={100}
                                 height={100}
                                 priority
                                 style={{ width: desktopLogoSize, height: desktopLogoSize, objectFit: 'contain' }}
                             />
+                            {/* Static text for crawlers/SEO — always in DOM */}
+                            <span className="sr-only">Sun Tag &amp; Title</span>
+                            {/* Animated version for users — fades in on scroll */}
                             <span
-                                className="font-semibold whitespace-nowrap text-text-base leading-tight"
-                                style={{ opacity: progress, fontSize: '1.125rem' }}
+                                aria-hidden="true"
+                                className="font-semibold whitespace-nowrap text-text-base leading-tight text-lg"
+                                style={{ opacity: progress }}
                             >
                                 <span className="text-gold-base">Sun</span>{' '}
                                 <span className="text-red-base">Tag</span>{' '}&amp;{' '}
@@ -132,15 +136,19 @@ const Navigation = () => {
                     <Link href="/" className="flex flex-col items-center gap-0.5">
                         <Image
                             src="/app-logo.png"
-                            alt="sun-tag-and-title-logo"
+                            alt="Sun Tag and Title logo"
                             width={96}
                             height={96}
                             priority
                             style={{ width: mobileLogoSize, height: mobileLogoSize, objectFit: 'contain' }}
                         />
+                        {/* Static text for crawlers/SEO — always in DOM */}
+                        <span className="sr-only">Sun Tag &amp; Title</span>
+                        {/* Animated version for users — fades in on scroll */}
                         <span
-                            className="font-semibold whitespace-nowrap text-text-base"
-                            style={{ opacity: progress, fontSize: '0.875rem' }}
+                            aria-hidden="true"
+                            className="font-semibold whitespace-nowrap text-text-base text-sm"
+                            style={{ opacity: progress }}
                         >
                             <span className="text-gold-base">Sun</span>{' '}
                             <span className="text-red-base">Tag</span>{' '}&amp;{' '}

@@ -1,6 +1,7 @@
 "use client";
 import { footerLinks } from '@/app/data/links';
 import Link from 'next/link';
+import Image from 'next/image';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import SmsIcon from '@mui/icons-material/Sms';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -50,6 +51,17 @@ const Footer = () => {
                 <div className="flex-1 bg-gold-base" />
             </div>
             <div className="container mx-auto px-4 text-center text-text-base">
+                {/* ── Brand identity block (logo + name) — required for Google Ads compliance ── */}
+                <div className="flex flex-col items-center mb-6">
+                    <Image
+                        src="/app-logo.png"
+                        alt="Sun Tag and Title logo"
+                        width={72}
+                        height={72}
+                        className="object-contain"
+                    />
+                    <p className="text-lg font-bold text-text-base mt-2">Sun Tag &amp; Title</p>
+                </div>
                 <p>&copy; {new Date().getFullYear()} Sun Tag And Title. All rights reserved.</p>
                 <div className="flex flex-col items-center gap-3 mt-6">
                     {/* Share buttons */}
