@@ -60,7 +60,11 @@ const Footer = () => {
                         height={72}
                         className="object-contain"
                     />
-                    <p className="text-lg font-bold text-text-base mt-2">Sun Tag &amp; Title</p>
+                    <p className="text-lg font-semibold whitespace-nowrap text-text-base leading-tight mt-2">
+                        <span className="text-gold-base">Sun</span>{' '}
+                        <span className="text-red-base">Tag</span>{' '}&amp;{' '}
+                        <span className="text-blue-glow">Title</span>
+                    </p>
                 </div>
                 <p>&copy; {new Date().getFullYear()} Sun Tag And Title. All rights reserved.</p>
                 <div className="flex flex-col items-center gap-3 mt-6">
