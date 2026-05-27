@@ -96,7 +96,7 @@ const Navigation = () => {
                     <div className="flex justify-center w-1/3">
                         <Link href="/" className="flex flex-col items-center gap-0.5">
                             <Image
-                                src="/app-logo.png"
+                                src="/suntag-logo.png"
                                 alt="Sun Tag and Title logo"
                                 width={100}
                                 height={100}
@@ -135,7 +135,7 @@ const Navigation = () => {
                 >
                     <Link href="/" className="flex flex-col items-center gap-0.5">
                         <Image
-                            src="/app-logo.png"
+                            src="/suntag-logo.png"
                             alt="Sun Tag and Title logo"
                             width={96}
                             height={96}

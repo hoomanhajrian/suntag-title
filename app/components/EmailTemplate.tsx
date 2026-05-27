@@ -50,7 +50,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
           <tr>
             <td align="center" style={{ paddingBottom: "24px" }}>
               <Img
-                src="https://suntagandtitle.com/logo.jpg"
+                src="https://suntagandtitle.com/suntag-logo.png"
                 width="80"
                 height="80"
                 alt="Sun Tag & Title logo"

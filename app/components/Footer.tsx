@@ -54,7 +54,7 @@ const Footer = () => {
                 {/* ── Brand identity block (logo + name) — required for Google Ads compliance ── */}
                 <div className="flex flex-col items-center mb-6">
                     <Image
-                        src="/app-logo.png"
+                        src="/suntag-logo.png"
                         alt="Sun Tag and Title logo"
                         width={72}
                         height={72}

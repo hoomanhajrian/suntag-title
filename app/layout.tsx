@@ -39,9 +39,9 @@ export const metadata: Metadata = {
       'Licensed Maryland tag agency in Columbia, MD. Same-day vehicle registration, title transfers, license plate renewals, temporary tags, and notary services.',
     images: [
       {
-        url: '/logo.jpg',
+        url: '/suntag-logo.png',
         width: 1200,
-        height: 630,
+        height: 1200,
         alt: 'Sun Tag & Title – Maryland Tag Agency in Columbia, MD',
       },
     ],
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: 'Sun Tag & Title | Maryland Tag Agency – Columbia, MD',
     description:
       'Licensed Maryland tag agency in Columbia, MD. Same-day vehicle registration, title transfers, license plate renewals, and notary services.',
-    images: ['/logo.jpg'],
+    images: ['/suntag-logo.png'],
   },
   alternates: {
     canonical: 'https://www.suntagandtitle.com',
@@ -78,6 +78,33 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dancingScript.variable} ${montserrat.variable} scroll-smooth`}>
       <head>
+        {/* Organization structured data for Google Ads logo */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              name: 'Sun Tag & Title',
+              url: 'https://www.suntagandtitle.com',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://www.suntagandtitle.com/suntag-logo.png',
+                width: 1200,
+                height: 1200,
+              },
+              image: 'https://www.suntagandtitle.com/suntag-logo.png',
+              description:
+                'Licensed Maryland tag agency in Columbia, MD. Same-day vehicle registration, title transfers, license plate renewals, temporary tags, and notary services.',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Columbia',
+                addressRegion: 'MD',
+                addressCountry: 'US',
+              },
+            }),
+          }}
+        />
         {/* Google Tag Manager */}
         <Script id="gtm-head" strategy="beforeInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
