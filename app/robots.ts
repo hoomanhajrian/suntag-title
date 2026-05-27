@@ -13,6 +13,11 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: '/tracking',
       },
+      {
+        userAgent: 'AdsBot-Google-Mobile',
+        allow: '/',
+        disallow: '/tracking',
+      },
     ],
     sitemap: 'https://suntagandtitle.com/sitemap.xml',
   };
