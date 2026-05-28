@@ -10,12 +10,12 @@ const services = [
     note: 'Both buyer and seller must be present or provide notarized signatures.',
   },
   {
-    name: 'Vehicle Registration',
+    name: 'New Plate & Tag Issuance',
     ourFee: 85,
-    description: 'New Maryland vehicle registration, including out-of-state title conversions.',
+    description: 'New Maryland plate issuance, including out-of-state title conversions — processed by our licensed MVA-authorized agents.',
     color: 'text-blue-glow',
     border: 'hover:border-blue-glow',
-    note: 'Valid Maryland auto insurance required before registration can be issued.',
+    note: 'Valid Maryland auto insurance required before a plate can be issued. Private service — fees apply.',
   },
   {
     name: '14 Day Temp Tag',
@@ -26,12 +26,12 @@ const services = [
     note: 'Valid proof of insurance and ownership documentation required at time of issuance.',
   },
   {
-    name: 'Registration Renewal',
+    name: 'Plate & Sticker Renewal',
     ourFee: 60,
-    description: 'Annual or 2-year Maryland license plate and registration renewal.',
+    description: 'Annual or 2-year Maryland plate renewal — we submit the paperwork and hand you your new sticker same day.',
     color: 'text-red-base',
     border: 'hover:border-red-base',
-    note: 'Bring your renewal notice or plate number. Same-day sticker issued.',
+    note: 'Bring your renewal notice or plate number. Private service — fees apply in addition to MD state fees.',
   },
   {
     name: 'Duplicate Title',
@@ -42,12 +42,12 @@ const services = [
     note: 'Active lien holders must authorize the duplicate before processing.',
   },
   {
-    name: 'Tag Return',
+    name: 'Plate Surrender',
     ourFee: 20,
-    description: 'Return of Maryland license plates to the MVA after selling or disposing of a vehicle.',
+    description: 'Surrender of Maryland license plates to the MVA after selling or disposing of a vehicle.',
     color: 'text-blue-glow',
     border: 'hover:border-blue-glow',
-    note: 'Required to stop registration fees from continuing to accrue.',
+    note: 'Required to stop ongoing plate fees from accruing.',
     flatFee: true,
   },
 ];

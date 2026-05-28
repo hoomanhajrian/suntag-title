@@ -12,12 +12,12 @@ const coreServices = [
     icon: <LocalOfferIcon className="w-8 h-8" />,
     title: "Tag & Registration",
     description:
-      "Maryland license plates, registration renewals, and title transfers — processed by our licensed MVA-authorized agents.",
+      "Maryland license plates, title transfers, and plate renewals — processed by our licensed MVA-authorized agents.",
     details: [
       "Title Transfer",
-      "Vehicle Registration",
-      "Registration Renewal",
-      "Tag Return",
+      "New Maryland plate issuance",
+      "Annual & 2-year plate renewal",
+      "Plate surrender processing",
       "In-person processing — walk-in appointments welcome",
     ],
     image: "/assets/on-site-processing-service.jpg",
@@ -97,6 +97,11 @@ const ServiceRow = ({ service, colorIndex, reverse }: { service: Service; colorI
           >
             {service.icon}
           </span>
+        </div>
+        {/* Private provider badge */}
+        <div className="absolute top-2 left-2 flex items-center gap-1.5 px-2 py-1 rounded-sm bg-black/70 border border-gold-base/40 text-[10px] text-gold-base font-semibold uppercase tracking-wide pointer-events-none">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          Private MVA-Authorized Agent
         </div>
       </div>
 
