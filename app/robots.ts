@@ -19,6 +19,9 @@ export default function robots(): MetadataRoute.Robots {
         disallow: '/tracking',
       },
     ],
-    sitemap: 'https://suntagandtitle.com/sitemap.xml',
+    sitemap: [
+      'https://www.suntagandtitle.com/sitemap.xml',
+      'https://suntagandtitle.com/sitemap.xml',
+    ],
   };
 }
