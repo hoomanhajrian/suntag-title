@@ -5,7 +5,7 @@ export const metadata = {
   description:
     "Read the Privacy Policy for Sun Tag & Title, a licensed Maryland tag agency in Columbia, MD. Learn how we collect, use, and protect your information.",
   alternates: {
-    canonical: 'https://suntagandtitle.com/privacy',
+    canonical: 'https://www.suntagandtitle.com/privacy',
   },
 };
 

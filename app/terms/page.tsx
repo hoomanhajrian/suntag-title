@@ -5,7 +5,7 @@ export const metadata = {
   description:
     "Read the Terms of Service for Sun Tag & Title, a licensed Maryland tag agency in Columbia, MD.",
   alternates: {
-    canonical: 'https://suntagandtitle.com/terms',
+    canonical: 'https://www.suntagandtitle.com/terms',
   },
 };
 

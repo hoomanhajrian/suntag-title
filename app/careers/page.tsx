@@ -6,7 +6,7 @@ export const metadata = {
   description:
     "Career opportunities at Sun Tag & Title, a licensed Maryland tag agency in Columbia, MD. Check back for open positions.",
   alternates: {
-    canonical: 'https://suntagandtitle.com/careers',
+    canonical: 'https://www.suntagandtitle.com/careers',
   },
 };
 

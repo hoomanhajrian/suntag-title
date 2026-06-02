@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     'Sun Tag & Title in Columbia, MD offers same-day vehicle registration, Maryland title transfers, license plate renewals, 30-day temporary tags, duplicate titles, and notary services. Walk-ins welcome — no appointment needed.',
   alternates: {
-    canonical: 'https://suntagandtitle.com',
+    canonical: 'https://www.suntagandtitle.com',
   },
 };
 

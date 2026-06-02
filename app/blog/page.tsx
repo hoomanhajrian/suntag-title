@@ -5,7 +5,7 @@ export const metadata = {
   description:
     "Helpful guides and tips about Maryland vehicle tag, title, and registration services from Sun Tag & Title in Columbia, MD.",
   alternates: {
-    canonical: 'https://suntagandtitle.com/blog',
+    canonical: 'https://www.suntagandtitle.com/blog',
   },
 };
 
