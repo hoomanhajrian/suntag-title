@@ -50,7 +50,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
           <tr>
             <td align="center" style={{ paddingBottom: "24px" }}>
               <Img
-                src="https://suntagandtitle.com/suntag-logo.png"
+                src="https://www.suntagandtitle.com/suntag-logo.png"
                 width="80"
                 height="80"
                 alt="Sun Tag & Title logo"
@@ -226,7 +226,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
               {/* Footer */}
               <Text style={{ color: "#555570", fontSize: "12px", textAlign: "center", margin: "0" }}>
                 This message was sent via the contact form at{" "}
-                <Link href="https://suntagandtitle.com" style={{ color: "#555570" }}>
+                <Link href="https://www.suntagandtitle.com" style={{ color: "#555570" }}>
                   suntagandtitle.com
                 </Link>
               </Text>

@@ -22,7 +22,7 @@ const localBusinessSchema = {
   name: 'Sun Tag & Title',
   description:
     'Licensed Maryland tag agency offering same-day vehicle registration, title transfers, license plate renewals, temporary tags, and notary services in Columbia, MD.',
-  url: 'https://suntagandtitle.com',
+  url: 'https://www.suntagandtitle.com',
   telephone: '+14104178272',
   email: 'amir@suntagandtitle.com',
   address: {
@@ -48,7 +48,7 @@ const localBusinessSchema = {
       closes: '19:30',
     },
   ],
-  image: 'https://suntagandtitle.com/assets/hero-bg.jpeg',
+  image: 'https://www.suntagandtitle.com/assets/hero-bg.jpeg',
   priceRange: '$$',
   sameAs: [
     'https://www.facebook.com/p/SUN-TAG-and-TITLE-61554522663897',

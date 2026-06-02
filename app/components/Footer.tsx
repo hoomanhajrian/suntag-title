@@ -8,7 +8,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import XIcon from '@mui/icons-material/X';
 import IosShareIcon from '@mui/icons-material/IosShare';
 
-const SITE_URL = 'https://suntagandtitle.com';
+const SITE_URL = 'https://www.suntagandtitle.com';
 const SHARE_TEXT = 'Sun Tag & Title | Same-day vehicle registration, title transfers & more in Columbia, MD';
 
 const shareLinks = [

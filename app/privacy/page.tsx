@@ -16,12 +16,12 @@ const sections = [
       <>
         <p>
           Sun Tag &amp; Title is a licensed, state-authorized tag agency proudly
-          serving our local community. Our website address is:{" "}
+          serving our local community. Our website address is: {" "}
           <a
-            href="https://suntagandtitle.com"
+            href="https://www.suntagandtitle.com"
             className="text-gold-base underline hover:text-gold-glow"
           >
-            https://suntagandtitle.com
+            https://www.suntagandtitle.com
           </a>
         </p>
       </>

@@ -394,10 +394,10 @@ export default function TermsPage() {
             <p>
               Website:{" "}
               <a
-                href="https://suntagandtitle.com"
+                href="https://www.suntagandtitle.com"
                 className="text-gold-base underline hover:text-gold-glow"
               >
-                suntagandtitle.com
+                www.suntagandtitle.com
               </a>
             </p>
           </div>
