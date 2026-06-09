@@ -10,7 +10,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <Image
           src="/assets/hero-bg.jpeg"
-          alt=""
+          alt="Sun Tag & Title branded background"
           fill
           priority
           className="object-cover object-center"
