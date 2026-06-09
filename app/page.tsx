@@ -5,7 +5,7 @@ import ServicesSection from "@/app/components/sections/ServicesSection";
 import AboutSection from "@/app/components/sections/AboutSection";
 import ContactSection from "@/app/components/sections/ContactSection";
 import PaymentSection from "@/app/components/sections/PaymentSection";
-import TrackPageView from "@/app/components/TrackPageView";
+
 
 export const metadata: Metadata = {
   title: 'Sun Tag & Title | Maryland Tag Agency – Columbia, MD',
@@ -82,7 +82,6 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <main className="bg-background">
-        <TrackPageView />
         <HeroSection />
         {/* Non-government disclosure — required for Google Ads policy compliance */}
         <div className="bg-background px-6 py-8">

@@ -2,7 +2,6 @@
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import { trackEvent } from '@/app/components/TrackPageView';
 
 const MAPS_URL =
     'https://maps.google.com/maps?q=10400+Shaker+Dr+Suite+8,+Columbia,+MD+21046';
@@ -24,8 +23,7 @@ const ContactBar = ({ visible }: ContactBarProps) => (
     >
         <a
             href="mailto:amir@suntagandtitle.com"
-            onClick={() => trackEvent('email_click', 'Contact Bar')}
-            className="flex-1 inline-flex items-center justify-center gap-1.5 text-white hover:text-gold-base hover:bg-white/5 transition-colors duration-200"
+           className="flex-1 inline-flex items-center justify-center gap-1.5 text-white hover:text-gold-base hover:bg-white/5 transition-colors duration-200"
         >
             <EmailIcon style={{ fontSize: 13 }} />
             <span className="hidden sm:inline">amir@suntagandtitle.com</span>
@@ -35,7 +33,6 @@ const ContactBar = ({ visible }: ContactBarProps) => (
 
         <a
             href="tel:+14104178272"
-            onClick={() => trackEvent('call_click', 'Contact Bar')}
             className="flex-1 inline-flex items-center justify-center gap-1.5 text-white hover:text-gold-base hover:bg-white/5 transition-colors duration-200"
         >
             <PhoneIcon style={{ fontSize: 13 }} />
@@ -48,7 +45,6 @@ const ContactBar = ({ visible }: ContactBarProps) => (
             href={MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackEvent('directions_click', 'Contact Bar')}
             className="flex-1 inline-flex items-center justify-center gap-1.5 text-white hover:text-gold-base hover:bg-white/5 transition-colors duration-200"
         >
             <LocationOnIcon style={{ fontSize: 13 }} />
