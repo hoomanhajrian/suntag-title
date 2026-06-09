@@ -10,7 +10,7 @@ import TrackPageView from "@/app/components/TrackPageView";
 export const metadata: Metadata = {
   title: 'Sun Tag & Title | Maryland Tag Agency – Columbia, MD',
   description:
-    'Sun Tag & Title in Columbia, MD offers same-day vehicle registration, Maryland title transfers, license plate renewals, 30-day temporary tags, duplicate titles, and notary services. Walk-ins welcome — no appointment needed.',
+    'Sun Tag & Title in Columbia, MD offers same-day vehicle registration, title transfers, plate renewals, temporary tags, duplicate titles, and notary services.',
   alternates: {
     canonical: 'https://www.suntagandtitle.com',
   },
@@ -21,7 +21,7 @@ const localBusinessSchema = {
   '@type': 'LocalBusiness',
   name: 'Sun Tag & Title',
   description:
-    'Licensed Maryland tag agency offering same-day vehicle registration, title transfers, license plate renewals, temporary tags, and notary services in Columbia, MD.',
+    'Licensed Maryland tag agency offering same-day vehicle registration, title transfers, plate renewals, temporary tags, and notary services in Columbia, MD.',
   url: 'https://www.suntagandtitle.com',
   telephone: '+14104178272',
   email: 'amir@suntagandtitle.com',

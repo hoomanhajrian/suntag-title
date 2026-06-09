@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Service Fees & Pricing | Sun Tag & Title – Columbia, MD',
   description:
-    'Transparent pricing for Maryland title transfers, new plate issuance, plate renewals, temporary tags, duplicate titles, and plate surrender at Sun Tag & Title in Columbia, MD. Private MVA-authorized agent — service fees are separate from Maryland MVA state fees.',
+    'Transparent fees for Maryland title transfers, plate issuance and renewals, temporary tags, duplicate titles, and plate surrender at Sun Tag & Title.',
   alternates: {
     canonical: 'https://www.suntagandtitle.com/pricing',
   },
