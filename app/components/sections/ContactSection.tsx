@@ -8,6 +8,7 @@ import SmsIcon from "@mui/icons-material/Sms";
 import SendIcon from "@mui/icons-material/Send";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { trackPhoneCall, trackContactClick } from "@/app/utils/analytics";
 
 const SERVICE_OPTIONS = [
   'Title Transfer',
@@ -100,10 +101,13 @@ const ContactSection = () => {
   }
 
   function handleContactClick(label: string, href: string) {
-    let event_type = 'contact_click';
-    if (href.startsWith('tel:')) event_type = 'call_click';
-    else if (href.startsWith('mailto:')) event_type = 'email_click';
-    else if (href.startsWith('https://maps') || href.includes('maps.google')) event_type = 'directions_click';
+    if (href.startsWith('tel:')) {
+      trackPhoneCall();
+    } else if (href.startsWith('mailto:')) {
+      trackContactClick('email');
+    } else if (href.startsWith('https://maps') || href.includes('maps.google')) {
+      trackContactClick('directions');
+    }
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -341,6 +345,7 @@ const ContactSection = () => {
         <div className="relative z-10 flex justify-center mb-10">
           <a
             href="sms:+14104178272"
+            onClick={() => trackContactClick('phone')}
             className="inline-flex text-sm items-center gap-3 px-8 py-4 rounded-sm font-bold text-white text-base uppercase tracking-widest transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
             style={{ backgroundColor: '#25D366' }}
           >
