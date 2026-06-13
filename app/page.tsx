@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import HeroSection from "@/app/components/sections/HeroSection";
 import ServicesSection from "@/app/components/sections/ServicesSection";
 import AboutSection from "@/app/components/sections/AboutSection";
+import ReviewsCarousel from "@/app/components/sections/ReviewsCarousel";
 import ContactSection from "@/app/components/sections/ContactSection";
 import PaymentSection from "@/app/components/sections/PaymentSection";
 
@@ -98,6 +99,7 @@ export default function HomePage() {
         </div>
         <ServicesSection />
         <AboutSection />
+        <ReviewsCarousel />
         <ContactSection />
         <PaymentSection />
       </main>

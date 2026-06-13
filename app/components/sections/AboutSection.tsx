@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const values = [
@@ -10,13 +13,32 @@ const values = [
   "Walk-ins welcome, no appointment needed",
 ];
 
-const stats = [
-  { value: "5+", label: "Years in Business", color: "text-blue-glow", border: "hover:border-blue-glow" },
-  { value: "7K+", label: "Vehicles Processed", color: "text-red-base", border: "hover:border-red-base" },
-  { value: "5★", label: "Average Rating", color: "text-gold-base", border: "hover:border-gold-base" },
-];
-
 const AboutSection = () => {
+  const [reviewCount, setReviewCount] = useState<number | string>("40+");
+
+  useEffect(() => {
+    const fetchReviewCount = async () => {
+      try {
+        const response = await fetch('/api/reviews');
+        if (response.ok) {
+          const data = await response.json();
+          if (data.userRatingCount) {
+            setReviewCount(`${data.userRatingCount}+`);
+          }
+        }
+      } catch (err) {
+        console.error('Error fetching review count for stats:', err);
+      }
+    };
+    fetchReviewCount();
+  }, []);
+
+  const stats = [
+    { value: "5+", label: "Years in Business", color: "text-blue-glow", border: "hover:border-blue-glow" },
+    { value: "7K+", label: "Vehicles Processed", color: "text-red-base", border: "hover:border-red-base" },
+    { value: reviewCount, label: "5-Star Reviews", color: "text-gold-base", border: "hover:border-gold-base" },
+  ];
+
   return (
     <section id="about" className="bg-background py-24 px-6 scroll-mt-36">
       <div className="max-w-6xl mx-auto">
