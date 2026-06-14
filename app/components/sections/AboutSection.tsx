@@ -40,7 +40,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="bg-background py-24 px-6 scroll-mt-36">
+    <section id="about" className="bg-background py-16 md:py-24 px-6 scroll-mt-36">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 space-y-3">
@@ -92,7 +92,7 @@ const AboutSection = () => {
           <div className="flex flex-col items-center gap-10">
 
             {/* Stats row */}
-            <div className="grid grid-cols-3 gap-6 w-full">
+            <div className="grid grid-cols-3 gap-3 sm:gap-6 w-full">
               {stats.map((stat) => (
                 <div
                   key={stat.label}

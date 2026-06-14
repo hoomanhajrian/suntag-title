@@ -97,7 +97,8 @@ export default function ReviewsCarousel() {
   const currentReview = reviews[currentIndex];
 
   return (
-      <section className="max-w-4xl mx-auto">
+    <section className="bg-background px-6 pb-16 md:pb-24">
+      <div className="max-w-4xl mx-auto">
         {/* Header with Stats */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-text-base mb-6">
@@ -132,7 +133,7 @@ export default function ReviewsCarousel() {
         {/* Carousel Container */}
         <div className="relative">
           {/* Review Card */}
-          <div className="bg-white/5 border border-gold-base/30 rounded-lg shadow-[0_0_15px_rgba(255,192,64,0.1)] p-8 md:p-12 min-h-[300px] flex flex-col justify-between relative overflow-hidden">
+          <div className="bg-white/5 border border-gold-base/30 rounded-lg shadow-[0_0_15px_rgba(255,192,64,0.1)] p-6 sm:p-8 md:p-12 min-h-[300px] flex flex-col justify-between relative overflow-hidden">
             {/* Background Accent */}
             <div className="absolute top-0 right-0 -mt-10 -mr-10 w-32 h-32 bg-gold-base/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -174,26 +175,26 @@ export default function ReviewsCarousel() {
           </div>
 
           {/* Navigation Buttons */}
-          <div className="flex items-center justify-between mt-8">
+          <div className="flex items-center justify-between mt-8 gap-4">
             {/* Left Button */}
             <button
               onClick={prevSlide}
-              className="flex items-center justify-center w-12 h-12 rounded-full border-2 border-gold-base hover:bg-gold-base hover:text-background text-gold-base transition-all duration-300"
+              className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-gold-base hover:bg-gold-base hover:text-background text-gold-base transition-all duration-300 shrink-0"
               aria-label="Previous review"
             >
-              <ChevronLeft size={24} />
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </button>
 
             {/* Indicators */}
-            <div className="flex gap-2">
+            <div className="flex gap-1.5 md:gap-2 flex-wrap justify-center">
               {reviews.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  className={`h-2 rounded-full transition-all duration-300 ${
                     index === currentIndex
-                      ? 'bg-gold-base w-8'
-                      : 'bg-gold-base/30 hover:bg-gold-base/60'
+                      ? 'bg-gold-base w-6 md:w-8'
+                      : 'bg-gold-base/30 w-2 hover:bg-gold-base/60'
                   }`}
                   aria-label={`Go to review ${index + 1}`}
                 />
@@ -203,10 +204,10 @@ export default function ReviewsCarousel() {
             {/* Right Button */}
             <button
               onClick={nextSlide}
-              className="flex items-center justify-center w-12 h-12 rounded-full border-2 border-gold-base hover:bg-gold-base hover:text-background text-gold-base transition-all duration-300"
+              className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-gold-base hover:bg-gold-base hover:text-background text-gold-base transition-all duration-300 shrink-0"
               aria-label="Next review"
             >
-              <ChevronRight size={24} />
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
             </button>
           </div>
 
@@ -222,7 +223,7 @@ export default function ReviewsCarousel() {
             href="https://search.google.com/local/reviews?placeid=ChIJ1xAxzwshyIkR5itm3CQaYHg"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-3 bg-gold-base text-background font-semibold uppercase tracking-wider rounded-sm hover:bg-gold-light transition-colors duration-200 mb-6"
+            className="inline-block px-6 md:px-8 py-3 bg-gold-base text-background text-sm md:text-base font-semibold uppercase tracking-wider rounded-sm hover:bg-gold-light transition-colors duration-200 mb-6"
           >
             View All Reviews on Google
           </a>
@@ -246,6 +247,7 @@ export default function ReviewsCarousel() {
             </span>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
   );
 }

@@ -145,7 +145,7 @@ const ServiceRow = ({ service, colorIndex, reverse }: { service: Service; colorI
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="bg-background py-24 px-6 scroll-mt-36">
+    <section id="services" className="bg-background py-16 md:py-24 px-6 scroll-mt-36">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 space-y-3">

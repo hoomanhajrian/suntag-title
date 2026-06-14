@@ -146,7 +146,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="py-24 px-6 scroll-mt-36"
+      className="py-16 md:py-24 px-6 scroll-mt-36"
       style={{ backgroundColor: '#000000', position: 'relative', zIndex: 1 }}
     >
       <div className="max-w-4xl mx-auto">
