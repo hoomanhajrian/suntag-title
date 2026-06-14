@@ -122,7 +122,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     })(window, document, "clarity", "script", "x44t529xcp");`}
         </Script>
       </head>
-      <body>
+      <body className="antialiased overflow-x-hidden">
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
