@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'Columbia MD tag agency',
     'vehicle title transfer Maryland',
     'car registration Columbia MD',
-    'Maryland license plate renewal',
+  'Maryland license plate renewal',
     'MVA tag agency Columbia',
     'temporary tag Maryland',
     'duplicate title Maryland',
