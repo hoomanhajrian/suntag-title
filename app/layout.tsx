@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 // Import the configured fonts
 import { dancingScript, montserrat } from './utils/fonts';
@@ -165,7 +164,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             gtag('config', 'AW-11410639321');
           `}
         </Script>
-        <SpeedInsights />
       </body>
     </html>
   );
