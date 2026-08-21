@@ -6,17 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: '/tracking',
-      },
-      {
-        userAgent: 'AdsBot-Google',
-        allow: '/',
-        disallow: '/tracking',
-      },
-      {
-        userAgent: 'AdsBot-Google-Mobile',
-        allow: '/',
-        disallow: '/tracking',
       },
     ],
     sitemap: [
